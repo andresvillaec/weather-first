@@ -47,6 +47,12 @@
 		27AE529721F2665A006D904A /* iOS_TemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_TemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AE529B21F2665A006D904A /* iOS_TemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TemplateUITests.swift; sourceTree = "<group>"; };
 		27AE529D21F2665A006D904A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27AE52AA21F26777006D904A /* Production-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Production-Info.plist"; sourceTree = "<group>"; };
+		27AE52AB21F2678C006D904A /* QA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QA-Info.plist"; sourceTree = "<group>"; };
+		27AE52AC21F26797006D904A /* Develop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Develop-Info.plist"; sourceTree = "<group>"; };
+		27AE52AD21F267C9006D904A /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		27AE52AE21F267DD006D904A /* QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QA.xcconfig; sourceTree = "<group>"; };
+		27AE52AF21F267F2006D904A /* Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,12 @@
 		27AE527A21F26659006D904A /* iOS_Template */ = {
 			isa = PBXGroup;
 			children = (
+				27AE52A921F26708006D904A /* Environment */,
 				27AE527B21F26659006D904A /* AppDelegate.swift */,
 				27AE527D21F26659006D904A /* ViewController.swift */,
 				27AE527F21F26659006D904A /* Main.storyboard */,
 				27AE528221F2665A006D904A /* Assets.xcassets */,
 				27AE528421F2665A006D904A /* LaunchScreen.storyboard */,
-				27AE528721F2665A006D904A /* Info.plist */,
 			);
 			path = iOS_Template;
 			sourceTree = "<group>";
@@ -123,6 +129,20 @@
 				27AE529D21F2665A006D904A /* Info.plist */,
 			);
 			path = iOS_TemplateUITests;
+			sourceTree = "<group>";
+		};
+		27AE52A921F26708006D904A /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				27AE528721F2665A006D904A /* Info.plist */,
+				27AE52AA21F26777006D904A /* Production-Info.plist */,
+				27AE52AB21F2678C006D904A /* QA-Info.plist */,
+				27AE52AC21F26797006D904A /* Develop-Info.plist */,
+				27AE52AD21F267C9006D904A /* Production.xcconfig */,
+				27AE52AE21F267DD006D904A /* QA.xcconfig */,
+				27AE52AF21F267F2006D904A /* Develop.xcconfig */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,69 +332,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		27AE529E21F2665A006D904A /* Debug */ = {
+		27AE529F21F2665A006D904A /* Debug (Develop) */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		27AE529F21F2665A006D904A /* Release */ = {
-			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -426,46 +386,30 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = "Debug (Develop)";
 		};
-		27AE52A121F2665A006D904A /* Debug */ = {
+		27AE52A221F2665A006D904A /* Debug (Develop) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
-				INFOPLIST_FILE = iOS_Template/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Develop-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsu.ios_template.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = "Debug (Develop)";
 		};
-		27AE52A221F2665A006D904A /* Release */ = {
+		27AE52A521F2665A006D904A /* Debug (Develop) */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NV6RLEM7VP;
-				INFOPLIST_FILE = iOS_Template/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-Template";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		27AE52A421F2665A006D904A /* Debug */ = {
-			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -483,10 +427,107 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Template.app/iOS_Template";
 			};
-			name = Debug;
+			name = "Debug (Develop)";
 		};
-		27AE52A521F2665A006D904A /* Release */ = {
+		27AE52A821F2665A006D904A /* Debug (Develop) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOS_Template;
+			};
+			name = "Debug (Develop)";
+		};
+		27AE52B421F26975006D904A /* Debug (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Debug (QA)";
+		};
+		27AE52B521F26975006D904A /* Debug (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/QA-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsu.ios_template.qa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug (QA)";
+		};
+		27AE52B621F26975006D904A /* Debug (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,10 +545,11 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Template.app/iOS_Template";
 			};
-			name = Release;
+			name = "Debug (QA)";
 		};
-		27AE52A721F2665A006D904A /* Debug */ = {
+		27AE52B721F26975006D904A /* Debug (QA) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,10 +566,108 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iOS_Template;
 			};
-			name = Debug;
+			name = "Debug (QA)";
 		};
-		27AE52A821F2665A006D904A /* Release */ = {
+		27AE52B821F26994006D904A /* Debug (Production)  */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Debug (Production) ";
+		};
+		27AE52B921F26994006D904A /* Debug (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Production-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsu.ios_template;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug (Production) ";
+		};
+		27AE52BA21F26994006D904A /* Debug (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Template.app/iOS_Template";
+			};
+			name = "Debug (Production) ";
+		};
+		27AE52BB21F26994006D904A /* Debug (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,7 +684,361 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = iOS_Template;
 			};
-			name = Release;
+			name = "Debug (Production) ";
+		};
+		27AE52BC21F269E3006D904A /* Release (Develop) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release (Develop)";
+		};
+		27AE52BD21F269E3006D904A /* Release (Develop) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Develop-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsu.ios_template.develop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release (Develop)";
+		};
+		27AE52BE21F269E3006D904A /* Release (Develop) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Template.app/iOS_Template";
+			};
+			name = "Release (Develop)";
+		};
+		27AE52BF21F269E3006D904A /* Release (Develop) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AF21F267F2006D904A /* Develop.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOS_Template;
+			};
+			name = "Release (Develop)";
+		};
+		27AE52C021F269F6006D904A /* Release (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release (Production) ";
+		};
+		27AE52C121F269F6006D904A /* Release (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Production-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsu.ios_template;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release (Production) ";
+		};
+		27AE52C221F269F6006D904A /* Release (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Template.app/iOS_Template";
+			};
+			name = "Release (Production) ";
+		};
+		27AE52C321F269F6006D904A /* Release (Production)  */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AD21F267C9006D904A /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOS_Template;
+			};
+			name = "Release (Production) ";
+		};
+		27AE52C421F269FD006D904A /* Release (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release (QA)";
+		};
+		27AE52C521F269FD006D904A /* Release (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/QA-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devsu.ios_template.qa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release (QA)";
+		};
+		27AE52C621F269FD006D904A /* Release (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS_Template.app/iOS_Template";
+			};
+			name = "Release (QA)";
+		};
+		27AE52C721F269FD006D904A /* Release (QA) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27AE52AE21F267DD006D904A /* QA.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NV6RLEM7VP;
+				INFOPLIST_FILE = iOS_TemplateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "devsu.iOS-TemplateUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iOS_Template;
+			};
+			name = "Release (QA)";
 		};
 /* End XCBuildConfiguration section */
 
@@ -552,38 +1046,54 @@
 		27AE527321F26659006D904A /* Build configuration list for PBXProject "iOS_Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27AE529E21F2665A006D904A /* Debug */,
-				27AE529F21F2665A006D904A /* Release */,
+				27AE529F21F2665A006D904A /* Debug (Develop) */,
+				27AE52BC21F269E3006D904A /* Release (Develop) */,
+				27AE52B821F26994006D904A /* Debug (Production)  */,
+				27AE52C021F269F6006D904A /* Release (Production)  */,
+				27AE52B421F26975006D904A /* Debug (QA) */,
+				27AE52C421F269FD006D904A /* Release (QA) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release (Production) ";
 		};
 		27AE52A021F2665A006D904A /* Build configuration list for PBXNativeTarget "iOS_Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27AE52A121F2665A006D904A /* Debug */,
-				27AE52A221F2665A006D904A /* Release */,
+				27AE52A221F2665A006D904A /* Debug (Develop) */,
+				27AE52BD21F269E3006D904A /* Release (Develop) */,
+				27AE52B921F26994006D904A /* Debug (Production)  */,
+				27AE52C121F269F6006D904A /* Release (Production)  */,
+				27AE52B521F26975006D904A /* Debug (QA) */,
+				27AE52C521F269FD006D904A /* Release (QA) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release (Production) ";
 		};
 		27AE52A321F2665A006D904A /* Build configuration list for PBXNativeTarget "iOS_TemplateTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27AE52A421F2665A006D904A /* Debug */,
-				27AE52A521F2665A006D904A /* Release */,
+				27AE52A521F2665A006D904A /* Debug (Develop) */,
+				27AE52BE21F269E3006D904A /* Release (Develop) */,
+				27AE52BA21F26994006D904A /* Debug (Production)  */,
+				27AE52C221F269F6006D904A /* Release (Production)  */,
+				27AE52B621F26975006D904A /* Debug (QA) */,
+				27AE52C621F269FD006D904A /* Release (QA) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release (Production) ";
 		};
 		27AE52A621F2665A006D904A /* Build configuration list for PBXNativeTarget "iOS_TemplateUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27AE52A721F2665A006D904A /* Debug */,
-				27AE52A821F2665A006D904A /* Release */,
+				27AE52A821F2665A006D904A /* Debug (Develop) */,
+				27AE52BF21F269E3006D904A /* Release (Develop) */,
+				27AE52BB21F26994006D904A /* Debug (Production)  */,
+				27AE52C321F269F6006D904A /* Release (Production)  */,
+				27AE52B721F26975006D904A /* Debug (QA) */,
+				27AE52C721F269FD006D904A /* Release (QA) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "Release (Production) ";
 		};
 /* End XCConfigurationList section */
 	};
