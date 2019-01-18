@@ -1,0 +1,16 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'iOS_Template' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  inherit! :search_paths
+
+  # Pods for iOS_Template
+  
+  abstract_target 'Tests' do
+    target 'iOS_Tests'
+    target 'iOS_UITests'
+    
+  end
+
+end
