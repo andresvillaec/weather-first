@@ -11,6 +11,8 @@
 		274879FB21F62C6100C0FEAB /* ChoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274879FA21F62C6100C0FEAB /* ChoiceTests.swift */; };
 		274879FE21F6539800C0FEAB /* TestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274879FD21F6539800C0FEAB /* TestsExtensions.swift */; };
 		274879FF21F6539800C0FEAB /* TestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274879FD21F6539800C0FEAB /* TestsExtensions.swift */; };
+		27487A0121F6549900C0FEAB /* QuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27487A0021F6549900C0FEAB /* QuestionTests.swift */; };
+		27487A0321F6560F00C0FEAB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27487A0221F6560F00C0FEAB /* Question.swift */; };
 		2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */; };
 		2795C4FB21F284D800DBAFA9 /* iOS_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4FA21F284D800DBAFA9 /* iOS_UITests.swift */; };
 		27AE527C21F26659006D904A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE527B21F26659006D904A /* AppDelegate.swift */; };
@@ -47,6 +49,8 @@
 		1983D322D66A900AC523DE87 /* Pods-iOS_Template.release (develop).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template.release (develop).xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template.release (develop).xcconfig"; sourceTree = "<group>"; };
 		274879FA21F62C6100C0FEAB /* ChoiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTests.swift; sourceTree = "<group>"; };
 		274879FD21F6539800C0FEAB /* TestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsExtensions.swift; sourceTree = "<group>"; };
+		27487A0021F6549900C0FEAB /* QuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
+		27487A0221F6560F00C0FEAB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		277F098D4EDD560D1310F9A9 /* libPods-iOS_TemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_TemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2795C4E621F284CB00DBAFA9 /* iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Tests.swift; sourceTree = "<group>"; };
@@ -117,12 +121,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		274879F921F62B9C00C0FEAB /* Model */ = {
+		274879F921F62B9C00C0FEAB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				274879FA21F62C6100C0FEAB /* ChoiceTests.swift */,
+				27487A0021F6549900C0FEAB /* QuestionTests.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		274879FC21F6536900C0FEAB /* Tests Helpers */ = {
@@ -136,7 +141,7 @@
 		2795C4E721F284CB00DBAFA9 /* iOS_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				274879F921F62B9C00C0FEAB /* Model */,
+				274879F921F62B9C00C0FEAB /* Models */,
 				2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */,
 				2795C4EA21F284CB00DBAFA9 /* Info.plist */,
 			);
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				D89528BD671735BA195D6591 /* Choice.swift */,
+				27487A0221F6560F00C0FEAB /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				274879FB21F62C6100C0FEAB /* ChoiceTests.swift in Sources */,
+				27487A0121F6549900C0FEAB /* QuestionTests.swift in Sources */,
 				274879FE21F6539800C0FEAB /* TestsExtensions.swift in Sources */,
 				2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */,
 			);
@@ -587,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AE527E21F26659006D904A /* ViewController.swift in Sources */,
+				27487A0321F6560F00C0FEAB /* Question.swift in Sources */,
 				27AE527C21F26659006D904A /* AppDelegate.swift in Sources */,
 				D8952BC1CD85415F22EEF57E /* Choice.swift in Sources */,
 			);

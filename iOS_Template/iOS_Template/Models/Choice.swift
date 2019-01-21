@@ -24,6 +24,5 @@ class Choice:Mappable {
     name <- map["name"]
     votes <- map["votes"]
   }
-
 }
 

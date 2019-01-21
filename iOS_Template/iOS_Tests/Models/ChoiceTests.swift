@@ -35,7 +35,7 @@ class ChoiceTests: QuickSpec {
         }
       }
       
-      context("shold instantiate correctly from JSON") {
+      context("should instantiate correctly from JSON") {
         
         let jsonString =
         """
