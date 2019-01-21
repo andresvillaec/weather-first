@@ -17,6 +17,7 @@
 		27AE528321F2665A006D904A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AE528221F2665A006D904A /* Assets.xcassets */; };
 		27AE528621F2665A006D904A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AE528421F2665A006D904A /* LaunchScreen.storyboard */; };
 		8CEC7153AE94ECF05D1641E6 /* Pods_iOS_Template_Tests_iOS_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635D3A840658D2C207379066 /* Pods_iOS_Template_Tests_iOS_UITests.framework */; };
+		D8952BC1CD85415F22EEF57E /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89528BD671735BA195D6591 /* Choice.swift */; };
 		E64C714326792E2B04C8328F /* Pods_iOS_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F5547ED34C00AC0FEA1F74 /* Pods_iOS_Template.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		B6F741B7DE6105878FB583FF /* Pods-iOS_Template-Tests-iOS_Tests.debug (develop).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template-Tests-iOS_Tests.debug (develop).xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template-Tests-iOS_Tests/Pods-iOS_Template-Tests-iOS_Tests.debug (develop).xcconfig"; sourceTree = "<group>"; };
 		D15EF9425E867D80AAAADC9A /* Pods-iOS_Template-Tests-iOS_Tests.debug (production) .xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template-Tests-iOS_Tests.debug (production) .xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template-Tests-iOS_Tests/Pods-iOS_Template-Tests-iOS_Tests.debug (production) .xcconfig"; sourceTree = "<group>"; };
 		D18B4836CA72658E946988E4 /* Pods-iOS_Template.debug (production) .xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template.debug (production) .xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template.debug (production) .xcconfig"; sourceTree = "<group>"; };
+		D89528BD671735BA195D6591 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		E3F5547ED34C00AC0FEA1F74 /* Pods_iOS_Template.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Template.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6541DB3BF67FFF365AFAED6 /* Pods-iOS_Template-Tests-iOS_Tests.release (production) .xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template-Tests-iOS_Tests.release (production) .xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template-Tests-iOS_Tests/Pods-iOS_Template-Tests-iOS_Tests.release (production) .xcconfig"; sourceTree = "<group>"; };
 		E74940113D037DC6F91E9CFB /* Pods-iOS_Template-Tests-iOS_UITests.debug (production) .xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template-Tests-iOS_UITests.debug (production) .xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template-Tests-iOS_UITests/Pods-iOS_Template-Tests-iOS_UITests.debug (production) .xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				27AE527F21F26659006D904A /* Main.storyboard */,
 				27AE528221F2665A006D904A /* Assets.xcassets */,
 				27AE528421F2665A006D904A /* LaunchScreen.storyboard */,
+				D89520B44D7ED2F3C4B9709C /* Models */,
 			);
 			path = iOS_Template;
 			sourceTree = "<group>";
@@ -199,6 +202,14 @@
 				635D3A840658D2C207379066 /* Pods_iOS_Template_Tests_iOS_UITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D89520B44D7ED2F3C4B9709C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D89528BD671735BA195D6591 /* Choice.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E1B33F919870A59C0DFA2ED3 /* Pods */ = {
@@ -563,6 +574,7 @@
 			files = (
 				27AE527E21F26659006D904A /* ViewController.swift in Sources */,
 				27AE527C21F26659006D904A /* AppDelegate.swift in Sources */,
+				D8952BC1CD85415F22EEF57E /* Choice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
