@@ -1,0 +1,19 @@
+
+{
+  "id" : 1,
+  "title" : "What is your favorite languaje",
+  "choices" : [
+    {
+      "id" : 1,
+      "name" : "swift"
+    },
+    {
+      "id" : 2,
+      "name" : "kotlin"
+    },
+    {
+      "id" : 3,
+      "name" : "python"
+    },
+  ]
+}

@@ -10,6 +10,7 @@ target 'iOS_Template' do
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'
   pod 'Bond'
+  pod 'RealmSwift'
   
   abstract_target 'Tests' do
     target 'iOS_Tests'

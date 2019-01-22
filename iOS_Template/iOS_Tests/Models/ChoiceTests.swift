@@ -23,7 +23,7 @@ class ChoiceTests: QuickSpec {
         var choice:Choice?
         
         beforeEach {
-          choice = Choice(name: "swift", votes: 4)
+          choice = Choice(id: 1, name: "swift", votes: 4)
         }
 
         it("should have the right name") {
@@ -37,18 +37,16 @@ class ChoiceTests: QuickSpec {
       
       context("should instantiate correctly from JSON") {
         
-        let jsonString =
-        """
-          {
-            "name": "Swift",
-            "votes": 2048
-          }
-        """
+        let jsonString = stringFrom(file: "choice", ofType: "json")
         
         var choice: Choice?
         
         beforeEach {
           choice = Choice(JSONString: jsonString)
+        }
+        
+        it("id should be 1") {
+          expect(choice?.id) == 1
         }
         
         it("name should be swift") {

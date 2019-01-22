@@ -23,12 +23,12 @@ class QuestionTests: QuickSpec {
         
         beforeEach {
           let choices = [
-            Choice(name: "swift"),
-            Choice(name: "kotlin"),
-            Choice(name: "python")
+            Choice(id: 1, name: "swift"),
+            Choice(id: 2, name: "kotlin"),
+            Choice(id: 3, name: "python")
           ]
           
-          question = Question(title: "Question title?", choices: choices)
+          question = Question(id: 1, title: "Question title?", choices: choices)
         }
         
         it("should have the right title") {
@@ -45,28 +45,16 @@ class QuestionTests: QuickSpec {
       
       context("should instantiate correctly from JSON") {
         
-        let jsonString =
-        """
-          {
-            "title" : "What is your favorite languaje",
-            "choices" : [
-              {
-                "name" : "swift"
-              },
-              {
-                "name" : "kotlin"
-              },
-              {
-                "name" : "python"
-              },
-            ]
-          }
-        """
+        let jsonString = stringFrom(file: "question", ofType: "json")
         
         var question: Question?
         
         beforeEach {
           question = Question(JSONString: jsonString)
+        }
+        
+        it("id should be 1") {
+          expect(question?.id) == 1
         }
         
         it("title should be: What is your favorite languaje") {
@@ -83,7 +71,7 @@ class QuestionTests: QuickSpec {
           expect(question?.choices[2].name) == "python"
         }
       }
-      
     }
   }
 }
+

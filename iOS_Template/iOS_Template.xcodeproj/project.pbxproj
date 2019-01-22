@@ -13,6 +13,8 @@
 		274879FF21F6539800C0FEAB /* TestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274879FD21F6539800C0FEAB /* TestsExtensions.swift */; };
 		27487A0121F6549900C0FEAB /* QuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27487A0021F6549900C0FEAB /* QuestionTests.swift */; };
 		27487A0321F6560F00C0FEAB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27487A0221F6560F00C0FEAB /* Question.swift */; };
+		27487A1221F77CCE00C0FEAB /* choice.json in Resources */ = {isa = PBXBuildFile; fileRef = 27487A1121F77CCE00C0FEAB /* choice.json */; };
+		27487A1421F77E5E00C0FEAB /* question.json in Resources */ = {isa = PBXBuildFile; fileRef = 27487A1321F77E5E00C0FEAB /* question.json */; };
 		2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */; };
 		2795C4FB21F284D800DBAFA9 /* iOS_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4FA21F284D800DBAFA9 /* iOS_UITests.swift */; };
 		27AE527C21F26659006D904A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE527B21F26659006D904A /* AppDelegate.swift */; };
@@ -51,6 +53,8 @@
 		274879FD21F6539800C0FEAB /* TestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsExtensions.swift; sourceTree = "<group>"; };
 		27487A0021F6549900C0FEAB /* QuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTests.swift; sourceTree = "<group>"; };
 		27487A0221F6560F00C0FEAB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		27487A1121F77CCE00C0FEAB /* choice.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = choice.json; sourceTree = "<group>"; };
+		27487A1321F77E5E00C0FEAB /* question.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = question.json; sourceTree = "<group>"; };
 		277F098D4EDD560D1310F9A9 /* libPods-iOS_TemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_TemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2795C4E621F284CB00DBAFA9 /* iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Tests.swift; sourceTree = "<group>"; };
@@ -138,9 +142,34 @@
 			path = "Tests Helpers";
 			sourceTree = "<group>";
 		};
+		27487A0421F6643000C0FEAB /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		27487A0E21F77C5200C0FEAB /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				27487A1521F77E8600C0FEAB /* Models */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		27487A1521F77E8600C0FEAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27487A1121F77CCE00C0FEAB /* choice.json */,
+				27487A1321F77E5E00C0FEAB /* question.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2795C4E721F284CB00DBAFA9 /* iOS_Tests */ = {
 			isa = PBXGroup;
 			children = (
+				27487A0E21F77C5200C0FEAB /* Fixtures */,
 				274879F921F62B9C00C0FEAB /* Models */,
 				2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */,
 				2795C4EA21F284CB00DBAFA9 /* Info.plist */,
@@ -183,6 +212,7 @@
 		27AE527A21F26659006D904A /* iOS_Template */ = {
 			isa = PBXGroup;
 			children = (
+				27487A0421F6643000C0FEAB /* View Models */,
 				27AE52A921F26708006D904A /* Environment */,
 				27AE527B21F26659006D904A /* AppDelegate.swift */,
 				27AE527D21F26659006D904A /* ViewController.swift */,
@@ -365,6 +395,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27487A1221F77CCE00C0FEAB /* choice.json in Resources */,
+				27487A1421F77E5E00C0FEAB /* question.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +457,8 @@
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -436,6 +470,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -457,6 +493,8 @@
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -472,6 +510,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -519,6 +559,8 @@
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -534,6 +576,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",

@@ -22,3 +22,21 @@ extension XCTest {
   }
   
 }
+
+
+extension XCTest {
+  
+  public func stringFrom(file: String, ofType fileType: String) -> String {
+    
+    if let filepath = Bundle(for: type(of: self)).path(forResource: file, ofType: fileType) {
+      do {
+        let contents = try String(contentsOfFile: filepath)
+        return contents
+      } catch {
+        return "Error Reading File"
+      }
+    } else {
+      return "Error Reading File"
+    }
+  }
+}
