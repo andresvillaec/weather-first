@@ -12,15 +12,10 @@ import RealmSwift
 class RealmDataManager: DataManagerProtocol {
   
   var dataSource = try! Realm()
-  var myString:String
-  
-  init(name:String = "hola") {
-    myString = name
-  }
   
   func saveOrUpdate<T>(object: T) {
-    // realm.write ...
-    // print("Patito   " + "\(dataSource.configuration.inMemoryIdentifier)")
-    print(myString)
+    try! dataSource.write {
+      dataSource.add(object as! Object, update: true)
+    }
   }
 }

@@ -10,9 +10,25 @@ import Foundation
 import RealmSwift
 
 class QuestionEntity: Object {
-  // add attributes
+
+  @objc dynamic var title = ""
+  @objc dynamic var id = 0
   
-  init(question:Question) {
-   ///....
+  var choices = List<ChoiceEntity>()
+  
+  func initFrom(question: Question) {
+
+    id = question.id
+    title = question.title
+    
+    for choice in question.choices {
+      let choiceEntity = ChoiceEntity()
+      choiceEntity.initFrom(choice: choice)
+      choices.append(choiceEntity)
+    }
+  }
+  
+  override static func primaryKey() -> String? {
+    return "id"
   }
 }
