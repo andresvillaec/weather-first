@@ -13,7 +13,6 @@ class QuestionEntity: Object {
 
   @objc dynamic var title = ""
   @objc dynamic var id = 0
-  
   var choices = List<ChoiceEntity>()
   
   func initFrom(question: Question) {

@@ -9,4 +9,9 @@
 import Foundation
 
 class QuestionDataManager: RealmDataManager {
+  
+  func findBy(title:String) -> QuestionEntity? {
+    let predicate = NSPredicate(format: "title = %@", title)
+    return dataSource.objects(QuestionEntity.self).filter(predicate).first
+  }
 }
