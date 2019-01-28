@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Favourite programming language?",
+    "published_at": "2015-08-05T08:40:51.620Z",
+    "choices": [
+      {
+        "id": 1,
+        "name": "Swift",
+        "votes": 2048
+      }, {
+        "id": 2,
+        "name": "Python",
+        "votes": 1024
+      }, {
+        "id": 3,
+        "name": "Objective-C",
+        "votes": 512
+      }, {
+        "id": 4,
+        "name": "Ruby",
+        "votes": 256
+      }
+    ]
+  }
+]

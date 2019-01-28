@@ -6,9 +6,8 @@ target 'iOS_Template' do
   use_frameworks!
 
   # Pods for iOS_Template
-  pod 'Alamofire'
+  pod 'Moya/ReactiveSwift'
   pod 'ObjectMapper'
-  pod 'AlamofireObjectMapper'
   pod 'Bond'
   pod 'RealmSwift'
   pod 'Swinject'

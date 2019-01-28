@@ -27,6 +27,19 @@ class ChoiceDataManagerTests: QuickSpec {
       container.register(Realm.self) { r in
         try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "test-Realm"))
       }
+      
+      let realm = container.resolve(Realm.self)
+      try! realm?.write {
+        realm?.deleteAll()
+      }
+      
+    }
+    
+    afterEach {
+      let realm = container.resolve(Realm.self)
+      try! realm?.write {
+        realm?.deleteAll()
+      }
     }
     
     describe("a ChoiceEntity") {
