@@ -20,6 +20,7 @@ class QuestionViewModel {
   let questions = MutableObservableArray<Question>()
   var questionService:QuestionServiceProtocol = QuestionService()
   var selectedQuestion = Observable<Question>(Question(id: 0, title: "", choices: []))
+  var questionDataManager:DataManagerProtocol = QuestionDataManager()
   
   let generalError = PublishSubject<(title:String, message:String, type:ErrorType), NoError>()
   
@@ -41,6 +42,12 @@ class QuestionViewModel {
   
   func selectQuestion(id: Int) {
     selectedQuestion.next(questions.array.filter { $0.id == id}.first!)
+  }
+  
+  func saveToDatabase() {
+    let questionEntity = QuestionEntity()
+    questionEntity.initFrom(question: selectedQuestion.value)
+    questionDataManager.saveOrUpdate(object: questionEntity)
   }
 }
 
