@@ -31,6 +31,7 @@
 		277CF29F21FB6D0800DACE36 /* QuestionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CF29E21FB6D0800DACE36 /* QuestionViewModelTests.swift */; };
 		2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */; };
 		2795C4FB21F284D800DBAFA9 /* iOS_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4FA21F284D800DBAFA9 /* iOS_UITests.swift */; };
+		27AAFC5D2200AF2A00AB4615 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAFC5C2200AF2A00AB4615 /* ViewControllerTests.swift */; };
 		27AE527C21F26659006D904A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE527B21F26659006D904A /* AppDelegate.swift */; };
 		27AE527E21F26659006D904A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE527D21F26659006D904A /* ViewController.swift */; };
 		27AE528121F26659006D904A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AE527F21F26659006D904A /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		2795C4F821F284D800DBAFA9 /* iOS_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2795C4FA21F284D800DBAFA9 /* iOS_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UITests.swift; sourceTree = "<group>"; };
 		2795C4FC21F284D800DBAFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27AAFC5C2200AF2A00AB4615 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		27AE527821F26659006D904A /* iOS_Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AE527B21F26659006D904A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27AE527D21F26659006D904A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		2795C4E721F284CB00DBAFA9 /* iOS_Tests */ = {
 			isa = PBXGroup;
 			children = (
+				27AAFC5B2200AE1D00AB4615 /* ViewController */,
 				277CF29D21FB6CF000DACE36 /* ViewModel */,
 				2757C47621FA128A0043621D /* Networking */,
 				27487A1721F77F4A00C0FEAB /* Data Manager */,
@@ -272,6 +275,14 @@
 				2795C4FC21F284D800DBAFA9 /* Info.plist */,
 			);
 			path = iOS_UITests;
+			sourceTree = "<group>";
+		};
+		27AAFC5B2200AE1D00AB4615 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				27AAFC5C2200AF2A00AB4615 /* ViewControllerTests.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		27AE526F21F26659006D904A = {
@@ -729,6 +740,7 @@
 				2757C47821FA12AA0043621D /* QuestionServiceTests.swift in Sources */,
 				27487A2521F8C8B600C0FEAB /* ChoiceDataManager.swift in Sources */,
 				274879FB21F62C6100C0FEAB /* ChoiceTests.swift in Sources */,
+				27AAFC5D2200AF2A00AB4615 /* ViewControllerTests.swift in Sources */,
 				27487A0121F6549900C0FEAB /* QuestionTests.swift in Sources */,
 				274879FE21F6539800C0FEAB /* TestsExtensions.swift in Sources */,
 				2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */,

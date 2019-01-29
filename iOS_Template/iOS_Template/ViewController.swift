@@ -11,20 +11,13 @@ import Bond
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var questionTitleLabe: UILabel!
-  @IBOutlet weak var button: UIButton!
+  @IBOutlet weak var questionsTableView: UITableView!
   
-//  let vm = ViewM()
-
+  let questionViewModel = QuestionViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    vm.questionTitle.bind(to: questionTitleLabe)
-//    
-//    button.reactive.tap.observeNext {
-//      self.vm.whenButtonPressed()
-//    }
-
   }
 
 }
