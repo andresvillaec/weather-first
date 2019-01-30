@@ -19,6 +19,7 @@ target 'iOS_Template' do
     pod 'Quick'
     pod 'Nimble'
     pod 'Mockingjay'
+    pod 'Cuckoo'
     
   end
 end

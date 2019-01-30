@@ -19,7 +19,7 @@ class QuestionViewModel {
   
   let questions = MutableObservableArray<Question>()
   var questionService:QuestionServiceProtocol = QuestionService()
-  var selectedQuestion = Observable<Question>(Question(id: 0, title: "", choices: []))
+  var selectedQuestion:Observable<Question> = Observable<Question>(Question(id: 0, title: "", choices: []))
   var questionDataManager:DataManagerProtocol = QuestionDataManager()
   
   let generalError = PublishSubject<(title:String, message:String, type:ErrorType), NoError>()

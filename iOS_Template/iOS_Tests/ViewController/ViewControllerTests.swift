@@ -9,19 +9,77 @@
 import Quick
 import Nimble
 import Swinject
+import Cuckoo
 
 @testable import iOS_Template
 
 class ViewControllerTests: QuickSpec {
   override func spec() {
     describe("ViewController") {
-      describe("questionsTableView") {
+      
+      var viewController:ViewController!
+      var container:Container!
+      var questionViewModelMock:MockQuestionViewModel!
+        
+      beforeEach {
+        container = Container()
+        questionViewModelMock = MockQuestionViewModel()
+        
+        Cuckoo.stub(questionViewModelMock) { mock in
+          when(mock.getQuestionsFromApi()).thenDoNothing()
+        }
+        
+        container.register(ViewController.self) { r in
+          let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+          viewController.questionViewModel = r.resolve(QuestionViewModel.self)!
+          return viewController
+        }
+        
+        container.register(QuestionViewModel.self) { r in
+          let questionViewModel = questionViewModelMock
+          let choices = [Choice(id: 1, name: "swift"), Choice(id: 2, name: "kotlin")]
+          let question = Question(id: 1, title: "New question Test", choices: choices)
+          questionViewModel!.questions.append(question)
+          return questionViewModel!
+        }
+        
+        viewController = container.resolve(ViewController.self)
+        
+      }
+      
+      describe("questionViewModel") {
         it("should not be nil") {
-          let sut = ViewController()
-          sut.loadView()
-          expect(sut.questionViewModel).toNot(beNil())
+          expect(viewController?.questionViewModel).toNot(beNil())
+        }
+      }
+      
+      describe("on viewDidLoad") {
+        it("should call questionViewModel getQuestionsFromApi") {
+          _ = viewController?.view
+          verify(questionViewModelMock, times(1)).getQuestionsFromApi()
+        }
+      }
+      
+      describe("questionsTableView") {
+        beforeEach {
+          _ = viewController?.view
+        }
+        
+        it("should not be nil") {
+          expect(viewController?.questionsTableView).toNot(beNil())
+        }
+        
+        it("should have one row") {
+          expect(viewController.questionsTableView.numberOfRows(inSection: 0)) == 1
+        }
+        
+        describe("cell text at index 0:1") {
+          it("should be New question Test") {
+            expect(viewController.questionsTableView.cellForRow(at: IndexPath(row: 0, section: 0))?.textLabel?.text) == "New question Test"
+          }
         }
       }
     }
   }
 }
+

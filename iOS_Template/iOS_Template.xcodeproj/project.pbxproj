@@ -27,7 +27,7 @@
 		2757C47821FA12AA0043621D /* QuestionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C47721FA12AA0043621D /* QuestionServiceTests.swift */; };
 		2757C47B21FA25EC0043621D /* NetworkManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C47A21FA25EC0043621D /* NetworkManagerProvider.swift */; };
 		2757C47E21FA57400043621D /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C47D21FA57400043621D /* QuestionService.swift */; };
-		2757C48021FB590E0043621D /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C47F21FB590E0043621D /* QuestionsViewModel.swift */; };
+		2757C48021FB590E0043621D /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757C47F21FB590E0043621D /* QuestionViewModel.swift */; };
 		277CF29F21FB6D0800DACE36 /* QuestionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277CF29E21FB6D0800DACE36 /* QuestionViewModelTests.swift */; };
 		2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4E821F284CB00DBAFA9 /* iOS_Tests.swift */; };
 		2795C4FB21F284D800DBAFA9 /* iOS_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C4FA21F284D800DBAFA9 /* iOS_UITests.swift */; };
@@ -37,6 +37,7 @@
 		27AE528121F26659006D904A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AE527F21F26659006D904A /* Main.storyboard */; };
 		27AE528321F2665A006D904A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AE528221F2665A006D904A /* Assets.xcassets */; };
 		27AE528621F2665A006D904A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27AE528421F2665A006D904A /* LaunchScreen.storyboard */; };
+		27ECAEF6220209860054DDB6 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ECAEF5220209860054DDB6 /* GeneratedMocks.swift */; };
 		8CEC7153AE94ECF05D1641E6 /* Pods_iOS_Template_Tests_iOS_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635D3A840658D2C207379066 /* Pods_iOS_Template_Tests_iOS_UITests.framework */; };
 		D8952BC1CD85415F22EEF57E /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89528BD671735BA195D6591 /* Choice.swift */; };
 		E64C714326792E2B04C8328F /* Pods_iOS_Template.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F5547ED34C00AC0FEA1F74 /* Pods_iOS_Template.framework */; };
@@ -82,7 +83,7 @@
 		2757C47721FA12AA0043621D /* QuestionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionServiceTests.swift; sourceTree = "<group>"; };
 		2757C47A21FA25EC0043621D /* NetworkManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProvider.swift; sourceTree = "<group>"; };
 		2757C47D21FA57400043621D /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
-		2757C47F21FB590E0043621D /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
+		2757C47F21FB590E0043621D /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		277CF29E21FB6D0800DACE36 /* QuestionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModelTests.swift; sourceTree = "<group>"; };
 		277F098D4EDD560D1310F9A9 /* libPods-iOS_TemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_TemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2795C4E621F284CB00DBAFA9 /* iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +107,7 @@
 		27AE52AE21F267DD006D904A /* QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QA.xcconfig; sourceTree = "<group>"; };
 		27AE52AF21F267F2006D904A /* Develop.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
 		27AE52CF21F2731C006D904A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		27ECAEF5220209860054DDB6 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneratedMocks.swift; path = iOS_Tests/GeneratedMocks.swift; sourceTree = SOURCE_ROOT; };
 		42074C07944154EEDA6A11C3 /* libPods-iOS_TemplateUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_TemplateUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		532F0DB139721847E8298C25 /* Pods-iOS_Template-Tests-iOS_Tests.debug (qa).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template-Tests-iOS_Tests.debug (qa).xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template-Tests-iOS_Tests/Pods-iOS_Template-Tests-iOS_Tests.debug (qa).xcconfig"; sourceTree = "<group>"; };
 		6224CF966E4039E9F51309C6 /* Pods-iOS_Template.release (production) .xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template.release (production) .xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template.release (production) .xcconfig"; sourceTree = "<group>"; };
@@ -172,12 +174,12 @@
 			path = "Tests Helpers";
 			sourceTree = "<group>";
 		};
-		27487A0421F6643000C0FEAB /* View Models */ = {
+		27487A0421F6643000C0FEAB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2757C47F21FB590E0043621D /* QuestionsViewModel.swift */,
+				2757C47F21FB590E0043621D /* QuestionViewModel.swift */,
 			);
-			path = "View Models";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		27487A0E21F77C5200C0FEAB /* Fixtures */ = {
@@ -198,7 +200,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		27487A1621F77F3800C0FEAB /* Data Manager */ = {
+		27487A1621F77F3800C0FEAB /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
 				27487A1A21F780EE00C0FEAB /* QuestionEntity.swift */,
@@ -208,7 +210,7 @@
 				27487A2221F7C7C600C0FEAB /* ChoiceEntity.swift */,
 				27487A2621F90A0000C0FEAB /* ChoiceDataManager.swift */,
 			);
-			path = "Data Manager";
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		27487A1721F77F4A00C0FEAB /* Data Manager */ = {
@@ -256,6 +258,7 @@
 		2795C4E721F284CB00DBAFA9 /* iOS_Tests */ = {
 			isa = PBXGroup;
 			children = (
+				27ECAEF42202097C0054DDB6 /* Mocks */,
 				27AAFC5B2200AE1D00AB4615 /* ViewController */,
 				277CF29D21FB6CF000DACE36 /* ViewModel */,
 				2757C47621FA128A0043621D /* Networking */,
@@ -312,8 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				2757C47921FA253F0043621D /* Networking */,
-				27487A1621F77F3800C0FEAB /* Data Manager */,
-				27487A0421F6643000C0FEAB /* View Models */,
+				27487A1621F77F3800C0FEAB /* DataManager */,
+				27487A0421F6643000C0FEAB /* ViewModels */,
 				27AE52A921F26708006D904A /* Environment */,
 				27AE527B21F26659006D904A /* AppDelegate.swift */,
 				27AE527D21F26659006D904A /* ViewController.swift */,
@@ -338,6 +341,14 @@
 				27AE52AF21F267F2006D904A /* Develop.xcconfig */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		27ECAEF42202097C0054DDB6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				27ECAEF5220209860054DDB6 /* GeneratedMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		6AF99B08CECE02F796C78D65 /* Frameworks */ = {
@@ -583,7 +594,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template-frameworks.sh\"\n\n# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/iOS_Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/ViewModels/QuestionViewModel.swift\" \n# ... and so forth, the last line should never end with a backslash\n";
 			showEnvVarsInLog = 0;
 		};
 		8B73DF0AC0F34F975C4F1A80 /* [CP] Embed Pods Frameworks */ = {
@@ -606,6 +617,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -626,6 +638,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -678,6 +691,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -698,6 +712,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -746,6 +761,7 @@
 				2795C4E921F284CB00DBAFA9 /* iOS_Tests.swift in Sources */,
 				277CF29F21FB6D0800DACE36 /* QuestionViewModelTests.swift in Sources */,
 				27487A1921F77F6500C0FEAB /* QuestionDataManagerTests.swift in Sources */,
+				27ECAEF6220209860054DDB6 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,7 +790,7 @@
 				27487A1B21F780EE00C0FEAB /* QuestionEntity.swift in Sources */,
 				27487A2721F90A0000C0FEAB /* ChoiceDataManager.swift in Sources */,
 				D8952BC1CD85415F22EEF57E /* Choice.swift in Sources */,
-				2757C48021FB590E0043621D /* QuestionsViewModel.swift in Sources */,
+				2757C48021FB590E0043621D /* QuestionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

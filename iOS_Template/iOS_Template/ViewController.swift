@@ -13,12 +13,24 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var questionsTableView: UITableView!
   
-  let questionViewModel = QuestionViewModel()
+  var questionViewModel = QuestionViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    setupTableView()
+    bindViewModel()
+    questionViewModel.getQuestionsFromApi()
   }
-
+  
+  func setupTableView() {
+    questionsTableView.reactive.dataSource.forwardTo = self
+  }
+  
+  func bindViewModel() {
+    questionViewModel.questions.bind(to: questionsTableView, cellType: UITableViewCell.self) { (cell, question) in
+      cell.textLabel?.text = question.title
+      cell.reactive.bag.dispose()
+    }
+  }
 }
 
