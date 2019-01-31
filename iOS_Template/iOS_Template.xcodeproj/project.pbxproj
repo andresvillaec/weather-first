@@ -450,6 +450,7 @@
 				27AE527521F26659006D904A /* Frameworks */,
 				27AE527621F26659006D904A /* Resources */,
 				66CF912D9605DEFCD407B5CB /* [CP] Embed Pods Frameworks */,
+				2785DBC922034A6D00F69F70 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -556,9 +557,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66CF912D9605DEFCD407B5CB /* [CP] Embed Pods Frameworks */ = {
+		2785DBC922034A6D00F69F70 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "OUTPUT_FILE=\"$PROJECT_DIR/iOS_Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/ViewModels/QuestionViewModel/.swift\"\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
+		66CF912D9605DEFCD407B5CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -595,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Template/Pods-iOS_Template-frameworks.sh\"\n\n";
 			showEnvVarsInLog = 0;
 		};
 		8B73DF0AC0F34F975C4F1A80 /* [CP] Embed Pods Frameworks */ = {
@@ -1765,7 +1783,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Develop-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/${TARGET_NAME}/Environment/Develop-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1841,7 +1859,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/QA-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/${TARGET_NAME}/Environment/QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1917,7 +1935,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
 				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Production-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/${TARGET_NAME}/Environment/Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1992,7 +2010,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
-				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Develop-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/${TARGET_NAME}/Environment/Develop-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2067,7 +2085,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
-				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/Production-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/${TARGET_NAME}/Environment/Production-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2142,7 +2160,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NV6RLEM7VP;
-				INFOPLIST_FILE = "$(SRCROOT)/iOS_Template/Environment/QA-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/${TARGET_NAME}/Environment/QA-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
