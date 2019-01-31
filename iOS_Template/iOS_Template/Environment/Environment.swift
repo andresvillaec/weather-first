@@ -9,7 +9,8 @@
 import Foundation
 
 public enum PlistKey:String {
-
+  case ServerUrl
+  case ServerProtocol
 }
 
 public struct Environment {
@@ -26,6 +27,10 @@ public struct Environment {
   
   public func configuration(_ key: PlistKey) -> String {
     switch key {
+    case .ServerUrl:
+      return infoDict[PlistKey.ServerUrl.rawValue] as! String
+    case .ServerProtocol:
+      return infoDict[PlistKey.ServerProtocol.rawValue] as! String
     }
   }
 }

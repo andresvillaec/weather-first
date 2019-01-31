@@ -17,5 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     return true
   }
+  
+  func setUpCrashAnalyticsService() {
+    // TODO: Implement any service according to the needs of the project
+  }
 }
 

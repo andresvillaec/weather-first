@@ -8,3 +8,6 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+SERVER_URL = private-39572-iostemplate.apiary-mock.com
+SERVER_PROTOCOL = https

@@ -16,7 +16,8 @@ enum NetworkManagerProvider {
 extension NetworkManagerProvider: TargetType {
   
   var baseURL: URL {
-    return URL(string: "https://private-39572-iostemplate.apiary-mock.com")!
+    
+    return URL(string: buildURL())!
   }
   
   var path: String {
@@ -54,5 +55,14 @@ private extension String {
   
   var utf8Encoded: Data {
     return data(using: .utf8)!
+  }
+}
+
+extension NetworkManagerProvider {
+  func buildURL() -> String {
+    var url = Environment().configuration(.ServerProtocol)
+    url += "://"
+    url += Environment().configuration(.ServerUrl)
+    return url
   }
 }

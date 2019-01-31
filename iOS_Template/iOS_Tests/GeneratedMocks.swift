@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: iOS_Template/ViewModels/QuestionViewModel.swift at 2019-01-30 16:32:57 +0000
+// MARK: - Mocks generated from file: iOS_Template/ViewModels/QuestionViewModel.swift at 2019-01-30 23:46:08 +0000
 
 //
 //  QuestionsViewModel.swift
