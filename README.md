@@ -58,14 +58,14 @@ To install CocoaPods please go to [CocoaPods] [2]
 #### Set up the project
 
  1. Clone the repo into a new repository.
- - Open iOS_Template.xcodeproj
- - Select iOS_Template target and on the file inspector change the name according to the project **(on the popup select rename)**
- - Change the main directory name to the new target name
- - Open Podfile and change the target name to the new target name
- - Delete Pods\_iOS\_Template.framework from Target Build Phases - Link Binary With Libraries
- - Change @testable import target to your new target on all iOS_Tests swift classes
- - Run pod install
- - Build and run the tests to confirm everything works fine
+ 2. Open iOS_Template.xcodeproj
+ 3. Select iOS_Template target and on the file inspector change the name according to the project **(on the popup select rename)**
+ 4. Change the main directory name to the new target name
+ 5. Open Podfile and change the target name to the new target name
+ 6. Delete Pods\_iOS\_Template.framework from all Targets in Build Phases - Link Binary With Libraries
+ 7. Change @testable import target to your new target on all iOS_Tests swift classes
+ 8. Run pod install
+ 9. Build and run the tests to confirm everything works fine
  
 
 
