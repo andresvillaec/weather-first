@@ -69,9 +69,22 @@ To install CocoaPods please go to [CocoaPods] [2]
  
 
 
+### Add new Environments
+
+ 1. Add new scheme
+ 2. Add environment-Info.plist (clone from Info.plist)
+ 3. Add Environment.xcconfig
+ 4. On Project - Info :
+ 	- Add configuration for debug and release
+    - On both debug and release configuration select the matching configuration file **(only for the project)**
+ 5. Run pod install *(this will autocomplete the configuration file for the different targets)*
 
 
 ### Extras
+
+#### Cuckoo
+
+When mocking classes using **Cuckoo** you need to add those classes to the `Cuckoo script`, then build the project. The script should be located on target - Build Phases. After building the prohject the _GeneratedMocks.swift_ file located in iOS_Tests/Mocks will be updated with the new mocks, if not, please check the logs for any warnings regarding mock generation *this won't throw and error*
 
 #### Cuckoo mock script
 
