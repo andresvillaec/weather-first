@@ -62,7 +62,7 @@ To install CocoaPods please go to [CocoaPods] [2]
  3. Select iOS_Template target and on the file inspector change the name according to the project **(on the popup select rename)**
  4. Change the main directory name to the new target name
  5. Open Podfile and change the target name to the new target name
- 6. Delete Pods\_iOS\_Template.framework from all Targets in Build Phases - Link Binary With Libraries
+ 6. Delete Pods\_iOS\_Template.framework from all Targets in `Build Phases - Link Binary With Libraries`
  7. Change @testable import target to your new target on all iOS_Tests swift classes
  8. Run pod install
  9. Build and run the tests to confirm everything works fine
@@ -84,7 +84,7 @@ To install CocoaPods please go to [CocoaPods] [2]
 
 #### Cuckoo
 
-When mocking classes using **Cuckoo** you need to add those classes to the `Cuckoo script`, then build the project. The script should be located on target - Build Phases. After building the prohject the _GeneratedMocks.swift_ file located in iOS_Tests/Mocks will be updated with the new mocks, if not, please check the logs for any warnings regarding mock generation *this won't throw and error*
+When mocking classes using **Cuckoo** you need to add those classes to the `Cuckoo script`, then build the project. The script should be located on `target - Build Phases`. After building the project the _GeneratedMocks.swift_ file located in `iOS_Tests/Mocks` will be updated with the new mocks, if not, please check the logs for any warnings regarding mock generation *this won't throw and error*
 
 #### Cuckoo mock script
 
