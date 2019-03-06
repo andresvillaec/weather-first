@@ -35,9 +35,9 @@ To install CocoaPods please go to [CocoaPods] [2]
 
  Pod								| Description								
 ------------------------------------|------------------------------------------- 
- [`Moya/ReactiveSwift`] [moya]		| Consume HTTP Apis making calls reactive	
+ [`Moya/RxSwift`] [moya]		| Consume HTTP Apis making calls reactive	
  [`ObjectMapper`] [om]				| JSON to Objects and Objects to JSON		
- [`Bond`] [bond]					| Bind ViewControllers to ViewModels
+ [`RxDataSources`] [rxds]					| Rx datasource for TableView and CollectionView
  [`RealmSwift`] [rs]				| Database
  [`Swinject`] [sj]					| Dependency Injection
  
@@ -52,6 +52,13 @@ To install CocoaPods please go to [CocoaPods] [2]
  [`Cuckoo`] [rs]					| Mock objects
 
 
+
+##### Transitive Dependencies
+
+ Pod								| Description								
+------------------------------------|------------------------------------------- 
+ [`RxSwift`] [rxswift]					| Swift Version of Rx
+ 
 
 ## How to use
 
@@ -118,11 +125,12 @@ echo "Mocks Input Directory = $INPUT_DIR"
 
 [moya]: https://github.com/Moya/Moya
 [om]: https://github.com/tristanhimmelman/ObjectMapper
-[bond]: https://github.com/DeclarativeHub/Bond
+[rxds]: https://github.com/DeclarativeHub/Bond
 [rs]: https://realm.io/docs/swift/latest/
 [sj]: https://github.com/Swinject/Swinject
 [quick]: https://github.com/Quick/Quick
 [NImble]: https://github.com/Quick/Nimble
 [Mockinjay]: https://github.com/kylef/Mockingjay
 [Cuckoo]: https://github.com/Brightify/Cuckoo
+[rxswift]: https://github.com/ReactiveX/RxSwift
 
