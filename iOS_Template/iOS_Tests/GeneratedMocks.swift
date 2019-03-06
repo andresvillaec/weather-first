@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: iOS_Template/ViewModels/QuestionViewModel.swift at 2019-01-30 23:46:08 +0000
+// MARK: - Mocks generated from file: iOS_Template/ViewModels/QuestionViewModel.swift at 2019-03-06 16:27:38 +0000
 
 //
 //  QuestionsViewModel.swift
@@ -11,9 +11,8 @@
 import Cuckoo
 @testable import iOS_Template
 
-import Bond
 import Foundation
-import ReactiveKit
+import RxSwift
 
 class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
     typealias MocksType = QuestionViewModel
@@ -54,7 +53,7 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
     }
     
     
-     override var selectedQuestion: Observable<Question> {
+     override var selectedQuestion: Variable<Question?> {
         get {
             return cuckoo_manager.getter("selectedQuestion",
                 superclassCall:
@@ -117,20 +116,6 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "selectQuestion", "returnSignature": "", "fullyQualifiedName": "selectQuestion(id: Int)", "parameterSignature": "id: Int", "parameterSignatureWithoutNames": "id: Int", "inputTypes": "Int", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "id", "call": "id: id", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("id"), name: "id", type: "Int", range: CountableRange(1144..<1151), nameRange: CountableRange(1144..<1146))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "id", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
-     override func selectQuestion(id: Int)  {
-        
-            return cuckoo_manager.call("selectQuestion(id: Int)",
-                parameters: (id),
-                escapingParameters: (id),
-                superclassCall:
-                    
-                    super.selectQuestion(id: id)
-                    ,
-                defaultCall: __defaultImplStub!.selectQuestion(id: id))
-        
-    }
-    
     // ["name": "saveToDatabase", "returnSignature": "", "fullyQualifiedName": "saveToDatabase()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func saveToDatabase()  {
         
@@ -157,7 +142,7 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
 	        return .init(manager: cuckoo_manager, name: "questionService")
 	    }
 	    
-	    var selectedQuestion: Cuckoo.ClassToBeStubbedProperty<MockQuestionViewModel, Observable<Question>> {
+	    var selectedQuestion: Cuckoo.ClassToBeStubbedProperty<MockQuestionViewModel, Variable<Question?>> {
 	        return .init(manager: cuckoo_manager, name: "selectedQuestion")
 	    }
 	    
@@ -169,11 +154,6 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
 	    func getQuestionsFromApi() -> Cuckoo.ClassStubNoReturnFunction<()> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockQuestionViewModel.self, method: "getQuestionsFromApi()", parameterMatchers: matchers))
-	    }
-	    
-	    func selectQuestion<M1: Cuckoo.Matchable>(id: M1) -> Cuckoo.ClassStubNoReturnFunction<(Int)> where M1.MatchedType == Int {
-	        let matchers: [Cuckoo.ParameterMatcher<(Int)>] = [wrap(matchable: id) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockQuestionViewModel.self, method: "selectQuestion(id: Int)", parameterMatchers: matchers))
 	    }
 	    
 	    func saveToDatabase() -> Cuckoo.ClassStubNoReturnFunction<()> {
@@ -199,7 +179,7 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
 	        return .init(manager: cuckoo_manager, name: "questionService", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
-	    var selectedQuestion: Cuckoo.VerifyProperty<Observable<Question>> {
+	    var selectedQuestion: Cuckoo.VerifyProperty<Variable<Question?>> {
 	        return .init(manager: cuckoo_manager, name: "selectedQuestion", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
@@ -213,12 +193,6 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
 	    func getQuestionsFromApi() -> Cuckoo.__DoNotUse<Void> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return cuckoo_manager.verify("getQuestionsFromApi()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func selectQuestion<M1: Cuckoo.Matchable>(id: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Int {
-	        let matchers: [Cuckoo.ParameterMatcher<(Int)>] = [wrap(matchable: id) { $0 }]
-	        return cuckoo_manager.verify("selectQuestion(id: Int)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	    @discardableResult
@@ -242,9 +216,9 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
         
     }
     
-     override var selectedQuestion: Observable<Question> {
+     override var selectedQuestion: Variable<Question?> {
         get {
-            return DefaultValueRegistry.defaultValue(for: (Observable<Question>).self)
+            return DefaultValueRegistry.defaultValue(for: (Variable<Question?>).self)
         }
         
         set { }
@@ -265,10 +239,6 @@ class MockQuestionViewModel: QuestionViewModel, Cuckoo.ClassMock {
 
     
      override func getQuestionsFromApi()  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
-     override func selectQuestion(id: Int)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     

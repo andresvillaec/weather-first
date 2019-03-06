@@ -9,7 +9,7 @@
 import Quick
 import Nimble
 import Moya
-import ReactiveSwift
+import RxSwift
 import ObjectMapper
 
 @testable import iOS_Template
@@ -40,18 +40,14 @@ class QuestionServiceTests: QuickSpec {
             
             let questionService = QuestionService()
             
-            questionService.getQuestions().start({ (event) in
+            questionService.getQuestions().subscribe{(event) in
               switch event {
-              case .value(let questionsResponse):
+              case .success(let questionsResponse):
                 questions = questionsResponse!
-              case .failed(_):
-                break
-              case .completed:
-                break
-              case .interrupted:
+              case .error(_):
                 break
               }
-            })
+            }
             
             expect(questions.count).toEventually(equal(testQuestions.count))
             expect(questions[0].title).toEventually(equal(testQuestions[0].title))

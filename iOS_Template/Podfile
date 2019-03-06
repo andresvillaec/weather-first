@@ -6,9 +6,9 @@ target 'iOS_Template' do
   use_frameworks!
 
   # Pods for iOS_Template
-  pod 'Moya/ReactiveSwift'
+  pod 'Moya/RxSwift'
+  pod 'RxDataSources'
   pod 'ObjectMapper'
-  pod 'Bond'
   pod 'RealmSwift'
   pod 'Swinject'
   

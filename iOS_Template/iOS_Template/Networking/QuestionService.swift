@@ -8,22 +8,21 @@
 
 import Foundation
 import Moya
-import ReactiveSwift
+import RxSwift
 import ObjectMapper
 
-typealias QuestionSignalProducer = SignalProducer<[Question]?, MoyaError>
+typealias QuestionPrimitiveSequence = PrimitiveSequence<SingleTrait, [Question]?>
 
 protocol QuestionServiceProtocol {
-  func getQuestions() -> QuestionSignalProducer
+  func getQuestions() -> QuestionPrimitiveSequence
 }
 
 class QuestionService:QuestionServiceProtocol {
   
   private let provider = MoyaProvider<NetworkManagerProvider>()
   
-  func getQuestions() -> QuestionSignalProducer{
-    
-    return provider.reactive.request(.getQuestions)
+  func getQuestions() -> QuestionPrimitiveSequence {
+      return provider.rx.request(.getQuestions)
       .filterSuccessfulStatusCodes()
       .mapJSON()
       .map { Mapper<Question>().mapArray(JSONObject: $0)}

@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ServerProtocol</key>
+	<string>${SERVER_PROTOCOL}</string>
+	<key>ServerUrl</key>
+	<string>${SERVER_URL}</string>
+	<key>EnvironmentName</key>
+	<string>${ENVIRONMENT_NAME}</string>
 </dict>
 </plist>

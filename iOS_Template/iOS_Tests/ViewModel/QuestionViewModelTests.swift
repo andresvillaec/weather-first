@@ -8,8 +8,7 @@
 
 import Quick
 import Nimble
-import ReactiveSwift
-import Bond
+import RxSwift
 import Moya
 import Swinject
 
@@ -21,6 +20,7 @@ class QuestionViewModelTests: QuickSpec {
     var questionServiceMock: QuestionServiceMock!
     var questionDataManagerMock: QuestionDataManagerMock!
     var questionVM:QuestionViewModel!
+    var disposeBag = DisposeBag()
     
     beforeEach {
       questionServiceMock = QuestionServiceMock()
@@ -51,7 +51,7 @@ class QuestionViewModelTests: QuickSpec {
           context("questions") {
             it("should cointain 1 question") {
               questionVM?.getQuestionsFromApi()
-              expect(questionVM?.questions.count).toEventually(equal(1))
+              expect(questionVM?.questions.value.count).toEventually(equal(1))
             }
           }
         }
@@ -61,14 +61,14 @@ class QuestionViewModelTests: QuickSpec {
             questionServiceMock.success = false
           }
           context("generalError") {
-            it("should cointain 1 question") {
+            it("should produce error message") {
               var (title, message, type):(String, String, ErrorType) = ("", "", .defaultError)
               
-              questionVM?.generalError.observeNext {(errorTitle, errorMessage, errorType) in
-                message = errorMessage
-                title = errorTitle
-                type = errorType
-                }.dispose(in: self.bag)
+              questionVM.generalError.subscribe { (event) in
+                message = event.element?.message ?? ""
+                title = event.element?.title ?? ""
+                type = (event.element?.type)!
+              }.disposed(by: disposeBag)
               
               questionVM?.getQuestionsFromApi()
               
@@ -84,13 +84,13 @@ class QuestionViewModelTests: QuickSpec {
         it("should set selectedQuestion") {
           let choices = [Choice(id: 1, name: "swift"), Choice(id: 2, name: "kotlin")]
           let question = Question(id: 1, title: "New question Test", choices: choices)
-          questionVM.questions.append(question)
+          questionVM.questions.value.append(question)
           
-          questionVM.selectQuestion(id: 1)
+          questionVM.selectedQuestion.value = question
           
-          expect(questionVM.selectedQuestion.value.id).toEventually(equal(1))
-          expect(questionVM.selectedQuestion.value.title).toEventually(equal("New question Test"))
-          expect(questionVM.selectedQuestion.value.choices.count).toEventually(equal(2))
+          expect(questionVM.selectedQuestion.value!.id).toEventually(equal(1))
+          expect(questionVM.selectedQuestion.value!.title).toEventually(equal("New question Test"))
+          expect(questionVM.selectedQuestion.value!.choices.count).toEventually(equal(2))
           
         }
       }
@@ -99,7 +99,7 @@ class QuestionViewModelTests: QuickSpec {
         it("should call save func in the dataManager") {
           let choices = [Choice(id: 1, name: "swift"), Choice(id: 2, name: "kotlin")]
           let question = Question(id: 1, title: "New question Test", choices: choices)
-          questionVM?.selectedQuestion.next(question)
+          questionVM?.selectedQuestion.value = question
           questionVM?.saveToDatabase()
           expect(questionDataManagerMock.saveOrUpdateCalled) == true
         }
@@ -113,15 +113,15 @@ class QuestionServiceMock:QuestionServiceProtocol {
   var getQuestionsCalled = false
   var success = true
   
-  func getQuestions() -> QuestionSignalProducer {
+  func getQuestions() -> QuestionPrimitiveSequence {
     
     getQuestionsCalled = true
     let choices:[Choice] = []
     
     if success {
-      return SignalProducer { [Question(id: 1, title: "Test", choices: choices)]}
+      return PrimitiveSequence.just([Question(id: 1, title: "Test", choices: choices)])
     } else {
-      return SignalProducer(error: MoyaError.requestMapping("error"))
+      return PrimitiveSequence.error( MoyaError.requestMapping("error"))
     }
   }
 }

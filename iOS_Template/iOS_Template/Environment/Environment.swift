@@ -11,6 +11,7 @@ import Foundation
 public enum PlistKey:String {
   case ServerUrl
   case ServerProtocol
+  case EnvironmentName
 }
 
 public struct Environment {
@@ -31,6 +32,8 @@ public struct Environment {
       return infoDict[PlistKey.ServerUrl.rawValue] as! String
     case .ServerProtocol:
       return infoDict[PlistKey.ServerProtocol.rawValue] as! String
+    case .EnvironmentName:
+      return infoDict[PlistKey.EnvironmentName.rawValue] as! String
     }
   }
 }

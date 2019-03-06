@@ -10,6 +10,7 @@ import Quick
 import Nimble
 import Swinject
 import Cuckoo
+import RxSwift
 
 @testable import iOS_Template
 
@@ -27,10 +28,14 @@ class ViewControllerTests: QuickSpec {
         
         Cuckoo.stub(questionViewModelMock) { mock in
           when(mock.getQuestionsFromApi()).thenDoNothing()
+          when(mock.selectedQuestion.get).then({ (_) -> Variable<Question?> in
+            return Variable<Question?>(nil)
+          })
         }
         
         container.register(ViewController.self) { r in
-          let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+          let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
+          let viewController = navigationController.topViewController as! ViewController
           viewController.questionViewModel = r.resolve(QuestionViewModel.self)!
           return viewController
         }
@@ -39,7 +44,7 @@ class ViewControllerTests: QuickSpec {
           let questionViewModel = questionViewModelMock
           let choices = [Choice(id: 1, name: "swift"), Choice(id: 2, name: "kotlin")]
           let question = Question(id: 1, title: "New question Test", choices: choices)
-          questionViewModel!.questions.append(question)
+          questionViewModel!.questions.value.append(question)
           return questionViewModel!
         }
         
@@ -64,15 +69,15 @@ class ViewControllerTests: QuickSpec {
         beforeEach {
           _ = viewController?.view
         }
-        
+
         it("should not be nil") {
           expect(viewController?.questionsTableView).toNot(beNil())
         }
-        
+
         it("should have one row") {
           expect(viewController.questionsTableView.numberOfRows(inSection: 0)) == 1
         }
-        
+
         describe("cell text at index 0:1") {
           it("should be New question Test") {
             expect(viewController.questionsTableView.cellForRow(at: IndexPath(row: 0, section: 0))?.textLabel?.text) == "New question Test"

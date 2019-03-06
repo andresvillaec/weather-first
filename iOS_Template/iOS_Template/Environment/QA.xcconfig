@@ -12,3 +12,4 @@
 
 SERVER_URL = private-39572-iostemplate.apiary-mock.com
 SERVER_PROTOCOL = https
+ENVIRONMENT_NAME = qa

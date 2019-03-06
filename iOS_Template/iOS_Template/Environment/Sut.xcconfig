@@ -1,14 +1,14 @@
 //
-//  Production.xcconfig
+//  Sut.xcconfig
 //  iOS_Template
 //
-//  Created by Sebastian Guerrero F on 1/18/19.
+//  Created by Sebastian Guerrero F on 2/16/19.
 //  Copyright © 2019 DEVSU. All rights reserved.
 //
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-SERVER_URL = private-39572-iostemplate.apiary-mock.com
+SERVER_URL = sut.baseurl
 SERVER_PROTOCOL = https
-ENVIRONMENT_NAME = production
+ENVIRONMENT_NAME = sut

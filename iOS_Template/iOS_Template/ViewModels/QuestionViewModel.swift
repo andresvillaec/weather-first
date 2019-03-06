@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Bond
-import ReactiveKit
+import RxSwift
 
 enum ErrorType {
   case getQuestionError
@@ -17,36 +16,31 @@ enum ErrorType {
 
 class QuestionViewModel {
   
-  let questions = MutableObservableArray<Question>()
+  let questions:Variable<[Question]> = Variable<[Question]>([])
   var questionService:QuestionServiceProtocol = QuestionService()
-  var selectedQuestion:Observable<Question> = Observable<Question>(Question(id: 0, title: "", choices: []))
+  var selectedQuestion:Variable<Question?> = Variable<Question?>(nil)
   var questionDataManager:DataManagerProtocol = QuestionDataManager()
   
-  let generalError = PublishSubject<(title:String, message:String, type:ErrorType), NoError>()
+  let generalError = PublishSubject<(title:String, message:String, type:ErrorType)>()
+  let disposeBag = DisposeBag()
   
   func getQuestionsFromApi() {
-    questionService.getQuestions().start { event in
+    
+    questionService.getQuestions().subscribe { (event) in
       switch event {
-      case .value(let value) :
-        for questionResponse in value! {
-          self.questions.append(questionResponse)
-        }
-        break
-      case .failed(_):
-        self.generalError.next((title: "Error", message: "Please try again!", type: .getQuestionError))
-      default:
-        break
+      case .success(let something):
+        self.questions.value.append(contentsOf: something!)
+      case .error(_):
+        self.generalError.onNext((title: "Error", message: "Please try again!", type: .getQuestionError))
       }
-    }
+    }.disposed(by: disposeBag)
   }
   
-  func selectQuestion(id: Int) {
-    selectedQuestion.next(questions.array.filter { $0.id == id}.first!)
-  }
+  
   
   func saveToDatabase() {
     let questionEntity = QuestionEntity()
-    questionEntity.initFrom(question: selectedQuestion.value)
+    questionEntity.initFrom(question: selectedQuestion.value!)
     questionDataManager.saveOrUpdate(object: questionEntity)
   }
 }
