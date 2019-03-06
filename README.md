@@ -48,7 +48,7 @@ To install CocoaPods please go to [CocoaPods] [2]
 ------------------------------------|------------------------------------------- 
  [`Quick`] [moya]					| BDD Framework	
  [`Nimble`] [om]					| Matcher for tests		
- [`Mockingjay`] [bond]				| Stub HTTP requests
+ [`Mockingjay`] [Mockinjay]				| Stub HTTP requests
  [`Cuckoo`] [rs]					| Mock objects
 
 
