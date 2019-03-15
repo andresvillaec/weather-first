@@ -24,7 +24,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -33,15 +32,11 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-        
-        bindViewModel()
     }
     
-    func bindViewModel() {
-        searchWeatherButton.rx.tap.bind {
-            self.currentWeatherVM.getCurrentWeatherInfo(lat:37.785834, lon:-122.406417)
-        }.disposed(by: bag)
-        
+    func bindCurrentWeatherViewModel(lat:Double, lon:Double) {
+        self.currentWeatherVM.getCurrentWeatherInfo(lat:lat, lon:lon)
+
         currentWeatherVM.cityName.bind(to: cityLabel.rx.text).disposed(by: bag)
         currentWeatherVM.temp.map { String($0) }.bind(to: temperatureLabel.rx.text).disposed(by: bag)
         currentWeatherVM.image.bind(to: weatherImageView.rx.image).disposed(by: bag)
@@ -50,26 +45,28 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation :CLLocation = locations[0] as CLLocation
         
-        print("geo = \(userLocation.coordinate)")
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
+//        print("geo = \(userLocation.coordinate)")
+//        print("user latitude = \(userLocation.coordinate.latitude)")
+//        print("user longitude = \(userLocation.coordinate.longitude)")
+//
+        bindCurrentWeatherViewModel(lat: userLocation.coordinate.latitude, lon: userLocation.coordinate.longitude)
         
-    
-        let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
-            if (error != nil){
-                print("error in reverseGeocode")
-            }
-            let placemark = placemarks! as [CLPlacemark]
-            if placemark.count>0{
-                let placemark = placemarks![0]
-                print(placemark.locality!)
-                print(placemark.administrativeArea!)
-                print(placemark.country!)
-                
-//                self.labelAdd.text = "\(placemark.locality!), \(placemark.administrativeArea!), \(placemark.country!)"
-            }
-        }
+//
+//        let geocoder = CLGeocoder()
+//        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
+//            if (error != nil){
+//                print("error in reverseGeocode")
+//            }
+//            let placemark = placemarks! as [CLPlacemark]
+//            if placemark.count>0{
+//                let placemark = placemarks![0]
+//                print(placemark.locality!)
+//                print(placemark.administrativeArea!)
+//                print(placemark.country!)
+//
+////                self.labelAdd.text = "\(placemark.locality!), \(placemark.administrativeArea!), \(placemark.country!)"
+//            }
+//        }
         
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

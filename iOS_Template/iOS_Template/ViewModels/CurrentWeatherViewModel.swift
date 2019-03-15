@@ -22,7 +22,7 @@ class CurrentWeatherViewModel {
             switch event {
             case .success(let weather):
                 self.cityName.onNext(weather?.name ?? "")
-                self.temp.onNext(weather?.temp ?? 0)
+                self.temp.onNext(weather?.getTemperature() ?? 0)
                 self.image.onNext(weather?.image ?? UIImage())
                 break
             case .error(let error):

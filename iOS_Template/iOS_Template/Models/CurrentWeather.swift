@@ -28,4 +28,9 @@ class CurrentWeather: Mappable {
         icon <- map["weather.0.icon"]
         temp <- map["main.temp"]
     }
+    
+    func getTemperature() -> Double{
+        let celsius = (temp ?? 0 - 32.0) * (5/9)
+        return celsius as Double
+    }
 }
