@@ -1,0 +1,101 @@
+PODS:
+  - Alamofire (4.8.1)
+  - Cuckoo (0.12.1)
+  - Differentiator (3.1.0)
+  - Kingfisher (4.10.1)
+  - Mockingjay (2.0.1):
+    - Mockingjay/Core (= 2.0.1)
+    - Mockingjay/XCTest (= 2.0.1)
+  - Mockingjay/Core (2.0.1):
+    - URITemplate (~> 2.0)
+  - Mockingjay/XCTest (2.0.1):
+    - Mockingjay/Core
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Moya/RxSwift (12.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Nimble (8.0.0)
+  - ObjectMapper (3.4.2)
+  - Quick (2.0.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - Result (4.1.0)
+  - RxAtomic (4.4.1)
+  - RxCocoa (4.4.1):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxKingfisher (0.3.1):
+    - Kingfisher (~> 4)
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
+  - RxSwift (4.4.1):
+    - RxAtomic (~> 4.4)
+  - Swinject (2.5.0)
+  - URITemplate (2.0.3)
+
+DEPENDENCIES:
+  - Cuckoo
+  - Mockingjay
+  - Moya/RxSwift
+  - Nimble
+  - ObjectMapper
+  - Quick
+  - RealmSwift
+  - RxDataSources
+  - RxKingfisher (~> 0.3.1)
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Cuckoo
+    - Differentiator
+    - Kingfisher
+    - Mockingjay
+    - Moya
+    - Nimble
+    - ObjectMapper
+    - Quick
+    - Realm
+    - RealmSwift
+    - Result
+    - RxAtomic
+    - RxCocoa
+    - RxDataSources
+    - RxKingfisher
+    - RxSwift
+    - Swinject
+    - URITemplate
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Nimble: a0e6f95b4b91a4f66b6da3512b6bebc07c9cbf49
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxKingfisher: d79612e7a6cab0b67d6e9b63fc1572fccc825afb
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
+
+PODFILE CHECKSUM: 4ff9c46488d0a37c11b9531c6a87e3efe9526a8d
+
+COCOAPODS: 1.6.1

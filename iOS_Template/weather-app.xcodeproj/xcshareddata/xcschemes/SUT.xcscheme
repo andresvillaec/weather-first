@@ -17,7 +17,7 @@
                BlueprintIdentifier = "27AE527721F26659006D904A"
                BuildableName = "iOS_Template.app"
                BlueprintName = "iOS_Template"
-               ReferencedContainer = "container:iOS_Template.xcodeproj">
+               ReferencedContainer = "container:weather-app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,31 +26,8 @@
       buildConfiguration = "Debug (Develop)"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <CodeCoverageTargets>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27AE527721F26659006D904A"
-            BuildableName = "iOS_Template.app"
-            BlueprintName = "iOS_Template"
-            ReferencedContainer = "container:iOS_Template.xcodeproj">
-         </BuildableReference>
-      </CodeCoverageTargets>
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2795C4E521F284CB00DBAFA9"
-               BuildableName = "iOS_Tests.xctest"
-               BlueprintName = "iOS_Tests"
-               ReferencedContainer = "container:iOS_Template.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -58,7 +35,7 @@
             BlueprintIdentifier = "27AE527721F26659006D904A"
             BuildableName = "iOS_Template.app"
             BlueprintName = "iOS_Template"
-            ReferencedContainer = "container:iOS_Template.xcodeproj">
+            ReferencedContainer = "container:weather-app.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -81,14 +58,14 @@
             BlueprintIdentifier = "27AE527721F26659006D904A"
             BuildableName = "iOS_Template.app"
             BlueprintName = "iOS_Template"
-            ReferencedContainer = "container:iOS_Template.xcodeproj">
+            ReferencedContainer = "container:weather-app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug (Develop)"
+      buildConfiguration = "Release (Production) "
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -100,7 +77,7 @@
             BlueprintIdentifier = "27AE527721F26659006D904A"
             BuildableName = "iOS_Template.app"
             BlueprintName = "iOS_Template"
-            ReferencedContainer = "container:iOS_Template.xcodeproj">
+            ReferencedContainer = "container:weather-app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -108,7 +85,7 @@
       buildConfiguration = "Debug (Develop)">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release (Develop)"
+      buildConfiguration = "Release (Production) "
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

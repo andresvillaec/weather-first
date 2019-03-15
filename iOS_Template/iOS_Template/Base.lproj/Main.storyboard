@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tqo-5K-e7G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IcY-em-dyw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,6 +74,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMm-34-kGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="109.29535232383809"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="4kC-W4-pZw">
+            <objects>
+                <viewController id="tPy-gx-rxg" customClass="CurrentLocationViewController" customModule="iOS_Template" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QfV-97-Lgd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUU-5h-yna">
+                                <rect key="frame" x="170" y="50" width="35" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-UV-aCw">
+                                <rect key="frame" x="29" y="104" width="317" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRM-zv-sd4">
+                                        <rect key="frame" x="0.0" y="90" width="42" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-CJ-Rj8">
+                                        <rect key="frame" x="77" y="36" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="U9G-g1-7E1"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9pf-CJ-Rj8" firstAttribute="top" secondItem="Qix-UV-aCw" secondAttribute="top" constant="36" id="PXM-xB-zzB"/>
+                                    <constraint firstAttribute="height" constant="200" id="uJ4-N5-8jI"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ7-9F-2aY">
+                                <rect key="frame" x="154" y="558" width="67" height="30"/>
+                                <state key="normal" title="Consultar"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MUU-5h-yna" firstAttribute="top" secondItem="nVY-Nn-CMd" secondAttribute="top" constant="30" id="QW5-au-GKq"/>
+                            <constraint firstItem="MUU-5h-yna" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="Vuc-RV-JQi"/>
+                            <constraint firstItem="Qix-UV-aCw" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="WbD-Ue-S30"/>
+                            <constraint firstItem="nVY-Nn-CMd" firstAttribute="bottom" secondItem="mQ7-9F-2aY" secondAttribute="bottom" constant="30" id="d8v-nE-S4M"/>
+                            <constraint firstItem="Qix-UV-aCw" firstAttribute="top" secondItem="MUU-5h-yna" secondAttribute="bottom" constant="30" id="dRv-gT-iYO"/>
+                            <constraint firstItem="Qix-UV-aCw" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="uEP-K9-smR"/>
+                            <constraint firstItem="mQ7-9F-2aY" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="uHG-Bf-UDn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nVY-Nn-CMd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gHL-4h-dYX"/>
+                    <navigationItem key="navigationItem" id="Hg8-bJ-ZJi"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="MUU-5h-yna" id="ht5-cG-KvB"/>
+                        <outlet property="searchWeatherButton" destination="mQ7-9F-2aY" id="B8q-K0-SDJ"/>
+                        <outlet property="temperatureLabel" destination="tRM-zv-sd4" id="07j-WC-0Oy"/>
+                        <outlet property="weatherImageView" destination="9pf-CJ-Rj8" id="Pkz-YV-eyY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drT-iG-xp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2018.4000000000001" y="873.91304347826099"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="BTy-di-Y8K">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IcY-em-dyw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X53-UB-tCD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tPy-gx-rxg" kind="relationship" relationship="viewControllers" id="2Cc-hX-c2d"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nl8-5o-d9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="873.91304347826099"/>
         </scene>
     </scenes>
 </document>

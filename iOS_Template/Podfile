@@ -11,6 +11,7 @@ target 'iOS_Template' do
   pod 'ObjectMapper'
   pod 'RealmSwift'
   pod 'Swinject'
+  pod 'RxKingfisher', '~>0.3.1'
   
   abstract_target 'Tests' do
     target 'iOS_Tests'
