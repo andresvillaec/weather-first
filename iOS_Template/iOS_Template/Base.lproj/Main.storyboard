@@ -90,23 +90,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Qix-UV-aCw">
-                                <rect key="frame" x="29" y="104" width="317" height="200"/>
+                                <rect key="frame" x="14" y="104" width="347" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRM-zv-sd4">
-                                        <rect key="frame" x="0.0" y="90" width="42" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRM-zv-sd4">
+                                        <rect key="frame" x="0.0" y="84.5" width="72" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9pf-CJ-Rj8">
-                                        <rect key="frame" x="77" y="36" width="240" height="128"/>
+                                        <rect key="frame" x="107" y="36" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="U9G-g1-7E1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="mvu-ev-G5j"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="9pf-CJ-Rj8" firstAttribute="top" secondItem="Qix-UV-aCw" secondAttribute="top" constant="36" id="PXM-xB-zzB"/>
+                                    <constraint firstItem="9pf-CJ-Rj8" firstAttribute="leading" secondItem="tRM-zv-sd4" secondAttribute="trailing" constant="35" id="bwh-Wf-vPw"/>
+                                    <constraint firstItem="tRM-zv-sd4" firstAttribute="width" secondItem="9pf-CJ-Rj8" secondAttribute="width" multiplier="0.3" id="t2z-jN-w8L"/>
                                     <constraint firstAttribute="height" constant="200" id="uJ4-N5-8jI"/>
                                 </constraints>
                             </stackView>

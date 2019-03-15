@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import CoreLocation
+import RxKingfisher
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var cityLabel: UILabel!
@@ -38,36 +39,13 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         self.currentWeatherVM.getCurrentWeatherInfo(lat:lat, lon:lon)
 
         currentWeatherVM.cityName.bind(to: cityLabel.rx.text).disposed(by: bag)
-        currentWeatherVM.temp.map { String($0) }.bind(to: temperatureLabel.rx.text).disposed(by: bag)
-        currentWeatherVM.image.bind(to: weatherImageView.rx.image).disposed(by: bag)
+        currentWeatherVM.temp.bind(to: temperatureLabel.rx.text).disposed(by: bag)
+        currentWeatherVM.iconURL.bind(to: weatherImageView.kf.rx.image()).disposed(by: bag)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation :CLLocation = locations[0] as CLLocation
-        
-//        print("geo = \(userLocation.coordinate)")
-//        print("user latitude = \(userLocation.coordinate.latitude)")
-//        print("user longitude = \(userLocation.coordinate.longitude)")
-//
         bindCurrentWeatherViewModel(lat: userLocation.coordinate.latitude, lon: userLocation.coordinate.longitude)
-        
-//
-//        let geocoder = CLGeocoder()
-//        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
-//            if (error != nil){
-//                print("error in reverseGeocode")
-//            }
-//            let placemark = placemarks! as [CLPlacemark]
-//            if placemark.count>0{
-//                let placemark = placemarks![0]
-//                print(placemark.locality!)
-//                print(placemark.administrativeArea!)
-//                print(placemark.country!)
-//
-////                self.labelAdd.text = "\(placemark.locality!), \(placemark.administrativeArea!), \(placemark.country!)"
-//            }
-//        }
-        
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error \(error)")

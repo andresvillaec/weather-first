@@ -11,7 +11,7 @@ import Moya
 
 enum WeatherNetworkManagerProvider {
     case getCurrentWeather(lat:Double, lon:Double)
-    case getForecastWeather(city:String)
+    case getForecastWeather(lat:Double, lon:Double)
 }
 
 extension WeatherNetworkManagerProvider: TargetType {
@@ -45,10 +45,9 @@ extension WeatherNetworkManagerProvider: TargetType {
         switch self {
         case .getCurrentWeather(let lat, let lon):
             return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
-        case .getForecastWeather(let city):
-            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "q": city], encoding: URLEncoding.queryString)
+        case .getForecastWeather(let lat, let lon):
+            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
         }
-        
     }
     
     var headers: [String: String]? {

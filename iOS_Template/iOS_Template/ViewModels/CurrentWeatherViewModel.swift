@@ -13,8 +13,9 @@ import RxDataSources
 class CurrentWeatherViewModel {
     let service = CurrentWeatherService()
     var cityName = PublishSubject<String>()
-    var temp = PublishSubject<Double>()
+    var temp = PublishSubject<String>()
     var image = PublishSubject<UIImage>()
+    var iconURL = PublishSubject<URL>()
     let bag = DisposeBag()
     
     func getCurrentWeatherInfo(lat:Double, lon:Double) {
@@ -22,8 +23,9 @@ class CurrentWeatherViewModel {
             switch event {
             case .success(let weather):
                 self.cityName.onNext(weather?.name ?? "")
-                self.temp.onNext(weather?.getTemperature() ?? 0)
+                self.temp.onNext(weather?.getTemperature() ?? "")
                 self.image.onNext(weather?.image ?? UIImage())
+                self.iconURL.onNext(weather?.getIconURL() ?? URL(fileURLWithPath: ""))
                 break
             case .error(let error):
                 print(error)

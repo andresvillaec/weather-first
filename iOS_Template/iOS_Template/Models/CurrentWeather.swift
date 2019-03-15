@@ -29,8 +29,12 @@ class CurrentWeather: Mappable {
         temp <- map["main.temp"]
     }
     
-    func getTemperature() -> Double{
+    func getTemperature() -> String{
         let celsius = (temp ?? 0 - 32.0) * (5/9)
-        return celsius as Double
+        return String(format: "%.0f °", celsius)
+    }
+    
+    func getIconURL() -> URL {
+        return URL(string: "https://openweathermap.org/img/w/\(icon!).png")!
     }
 }
