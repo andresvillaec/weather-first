@@ -25,7 +25,7 @@ class CurrentWeatherViewModel {
                 self.cityName.onNext(weather?.name ?? "")
                 self.temp.onNext(weather?.getTemperature() ?? "")
                 self.image.onNext(weather?.image ?? UIImage())
-                self.iconURL.onNext(weather?.getIconURL() ?? URL(fileURLWithPath: ""))
+                self.iconURL.onNext((weather?.getIconURL())!)
                 break
             case .error(let error):
                 print(error)

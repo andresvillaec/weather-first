@@ -44,9 +44,9 @@ extension WeatherNetworkManagerProvider: TargetType {
     var task: Task {
         switch self {
         case .getCurrentWeather(let lat, let lon):
-            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "units": "metric", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
         case .getForecastWeather(let lat, let lon):
-            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "units": "metric", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
         }
     }
     

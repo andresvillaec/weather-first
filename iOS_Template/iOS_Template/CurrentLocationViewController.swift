@@ -17,8 +17,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var searchWeatherButton: UIButton!
+    @IBOutlet weak var forecastTableView: UITableView!
     
     let currentWeatherVM = CurrentWeatherViewModel()
+    let forecastVM = ForecastViewModel()
     let bag = DisposeBag()
     var locationManager:CLLocationManager!
     
@@ -41,6 +43,21 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         currentWeatherVM.cityName.bind(to: cityLabel.rx.text).disposed(by: bag)
         currentWeatherVM.temp.bind(to: temperatureLabel.rx.text).disposed(by: bag)
         currentWeatherVM.iconURL.bind(to: weatherImageView.kf.rx.image()).disposed(by: bag)
+        
+        
+        self.forecastVM.getForecast(lat:lat, lon:lon)
+        forecastVM.days.bind(to: forecastTableView.rx.items) {
+            tableView, indexPath, forecast in
+            let cell = UITableViewCell()
+            cell.textLabel?.text = forecast.description
+            return cell
+            }.disposed(by: bag)
+        
+        forecastTableView.rx.modelSelected(Forecast.self).bind {
+            forecast in
+            print(forecast.city ?? "")
+            }.disposed(by: bag)
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
