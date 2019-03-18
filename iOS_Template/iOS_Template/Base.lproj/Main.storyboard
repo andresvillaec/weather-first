@@ -179,7 +179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uux-Fy-8Nc">
-                                <rect key="frame" x="32" y="60" width="88" height="21"/>
+                                <rect key="frame" x="32" y="60.5" width="87.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                 </connections>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWQ-xd-sDw">
-                                <rect key="frame" x="139" y="57" width="220" height="30"/>
+                                <rect key="frame" x="138.5" y="57" width="220.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -201,6 +201,21 @@
                                 <rect key="frame" x="173" y="119" width="29" height="30"/>
                                 <state key="normal" title="Go"/>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="fhz-wH-QW4">
+                                <rect key="frame" x="32" y="163" width="326.5" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7h-48-RQ9">
+                                        <rect key="frame" x="0.0" y="54" width="42.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJs-aI-XjN">
+                                        <rect key="frame" x="86.5" y="0.0" width="240" height="128"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -223,6 +238,8 @@
                         <outlet property="cityPickerView" destination="tCQ-hh-9vi" id="cTd-nY-cUb"/>
                         <outlet property="cityTextField" destination="aWQ-xd-sDw" id="RXR-z4-NuQ"/>
                         <outlet property="goButton" destination="oiq-cu-Kpq" id="fca-ms-V64"/>
+                        <outlet property="tempLabel" destination="F7h-48-RQ9" id="Iir-6s-KHD"/>
+                        <outlet property="weatherUIImageView" destination="jJs-aI-XjN" id="kWV-wo-1ci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7J-SH-cdw" userLabel="First Responder" sceneMemberID="firstResponder"/>

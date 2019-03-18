@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import RxKingfisher
 
 protocol AddCityDelegate {
     func addCity(city:String)
@@ -17,6 +20,11 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var cityPickerView: UIPickerView!
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var weatherUIImageView: UIImageView!
+    
+    let currentWeatherVM = CurrentWeatherViewModel()
+    let bag = DisposeBag()
     
     var delegate:AddCityDelegate?
     var cities = ["Quito", "Cuenca"]
@@ -27,10 +35,17 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         cityPickerView.delegate = self
         cityPickerView.dataSource = self
         cityTextField.delegate = self
+        
+        bindViewModel()
     }
     
     func bindViewModel() {
+        goButton.rx.tap.bind {
+            self.currentWeatherVM.getCurrentWeatherByCity(city: self.cityTextField.text ?? "")
+            }.disposed(by: bag)
         
+        currentWeatherVM.temp.bind(to: tempLabel.rx.text).disposed(by: bag)
+        currentWeatherVM.iconURL.bind(to: weatherUIImageView.kf.rx.image()).disposed(by: bag)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
