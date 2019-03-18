@@ -8,14 +8,44 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+protocol AddCityDelegate {
+    func addCity(city:String)
+}
+
+class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var cityPickerView: UIPickerView!
     @IBOutlet weak var cityTextField: UITextField!
     
+    var delegate:AddCityDelegate?
+    var cities = ["Quito", "Cuenca"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        cityPickerView.delegate = self
+        cityPickerView.dataSource = self
+        cityTextField.delegate = self
+    }
+    
+    @IBAction func goButtonPressed(_ sender: Any) {
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cities.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cities[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cityTextField.text = cities[row]
+        pickerView.isHidden = true
     }
 }

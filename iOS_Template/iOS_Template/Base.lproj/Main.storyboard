@@ -178,26 +178,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uux-Fy-8Nc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uux-Fy-8Nc">
                                 <rect key="frame" x="32" y="60" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCQ-hh-9vi">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCQ-hh-9vi">
                                 <rect key="frame" x="0.0" y="402" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="M8N-5h-iH1" id="AoD-cI-2az"/>
+                                    <outlet property="delegate" destination="M8N-5h-iH1" id="hy7-GH-NBd"/>
+                                </connections>
                             </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWQ-xd-sDw">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWQ-xd-sDw">
                                 <rect key="frame" x="139" y="57" width="220" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-cu-Kpq">
+                                <rect key="frame" x="173" y="119" width="29" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="M8N-5h-iH1" eventType="touchUpInside" id="baf-jv-JPA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uux-Fy-8Nc" firstAttribute="leading" secondItem="CVl-hb-tJz" secondAttribute="leading" constant="32" id="HGp-jD-Ljf"/>
+                            <constraint firstItem="aWQ-xd-sDw" firstAttribute="top" secondItem="CVl-hb-tJz" secondAttribute="top" constant="37" id="Idw-aK-tGZ"/>
+                            <constraint firstItem="oiq-cu-Kpq" firstAttribute="leading" secondItem="CVl-hb-tJz" secondAttribute="leading" constant="173" id="L9K-qZ-8mA"/>
+                            <constraint firstAttribute="trailing" secondItem="tCQ-hh-9vi" secondAttribute="trailing" id="Tt3-Ag-G0s"/>
+                            <constraint firstItem="uux-Fy-8Nc" firstAttribute="baseline" secondItem="aWQ-xd-sDw" secondAttribute="baseline" id="dzV-nO-mWJ"/>
+                            <constraint firstItem="oiq-cu-Kpq" firstAttribute="centerX" secondItem="tCQ-hh-9vi" secondAttribute="centerX" id="kDp-oq-AdS"/>
+                            <constraint firstItem="tCQ-hh-9vi" firstAttribute="leading" secondItem="EbH-tx-NpZ" secondAttribute="leading" id="kog-IJ-OUr"/>
+                            <constraint firstItem="aWQ-xd-sDw" firstAttribute="leading" secondItem="uux-Fy-8Nc" secondAttribute="trailing" constant="19" id="mqp-9b-tyv"/>
+                            <constraint firstItem="aWQ-xd-sDw" firstAttribute="trailing" secondItem="EbH-tx-NpZ" secondAttribute="trailingMargin" id="o5T-N7-0te"/>
+                            <constraint firstItem="oiq-cu-Kpq" firstAttribute="top" secondItem="aWQ-xd-sDw" secondAttribute="bottom" constant="32" id="r1U-7V-0Nu"/>
+                            <constraint firstItem="tCQ-hh-9vi" firstAttribute="bottom" secondItem="CVl-hb-tJz" secondAttribute="bottom" id="u3g-Lq-V4K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CVl-hb-tJz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="cc7-ln-Pcy"/>
