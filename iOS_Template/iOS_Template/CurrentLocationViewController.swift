@@ -44,7 +44,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         currentWeatherVM.temp.bind(to: temperatureLabel.rx.text).disposed(by: bag)
         currentWeatherVM.iconURL.bind(to: weatherImageView.kf.rx.image()).disposed(by: bag)
         
-        
         self.forecastVM.getForecast(lat:lat, lon:lon)
         forecastVM.days.bind(to: forecastTableView.rx.items) {
             tableView, indexPath, forecast in
@@ -53,9 +52,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             return cell
             }.disposed(by: bag)
         
-        forecastTableView.rx.modelSelected(Forecast.self).bind {
-            forecast in
-            print(forecast.city ?? "")
+        forecastTableView.rx.modelSelected(ForecastDay.self).bind {
+            forecastDay in
+            print(forecastDay.description ?? "")
             }.disposed(by: bag)
         
     }

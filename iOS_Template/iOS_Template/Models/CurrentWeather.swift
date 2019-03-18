@@ -30,8 +30,6 @@ class CurrentWeather: Mappable {
     }
     
     func getTemperature() -> String{
-//        let celsius = (temp ?? 0 - 32.0) * (5/9)
-//        return String(format: "%.0f °", celsius)
         return String(format: "%.0f °", temp ?? 0)
     }
     

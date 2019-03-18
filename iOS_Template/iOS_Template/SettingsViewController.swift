@@ -10,10 +10,16 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var numberOfDayTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func addCityPressedButton(_ sender: Any) {
+        
+    }
 }

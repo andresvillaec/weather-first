@@ -23,6 +23,7 @@ class Forecast: Mappable {
         cod <- map["cod"]
         message <- map["message"]
         city <- map["city.name"]
+        days <- map["list"]
     }
 }
 
@@ -37,15 +38,14 @@ class ForecastDay: Mappable {
     }
     
     func mapping(map: Map) {
-        temp <- map["list.main.temp"]
-        description <- map["list.weather.description"]
-        icon <- map["list.weather.0.icon"]
-        date <- map["list.dt_txt"]
+        temp <- map["main.temp"]
+        description <- map["weather.0.description"]
+        icon <- map["weather.0.icon"]
+        date <- map["dt_txt"]
     }
     
     func getTemperature() -> String{
-        let celsius = (temp ?? 0 - 32.0) * (5/9)
-        return String(format: "%.0f °", celsius)
+        return String(format: "%.0f °", temp ?? 0)
     }
     
     func getIconURL() -> URL {
