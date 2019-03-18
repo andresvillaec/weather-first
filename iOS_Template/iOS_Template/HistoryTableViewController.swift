@@ -9,17 +9,15 @@
 import UIKit
 import RealmSwift
 
-class HistoryTableViewController: UITableViewController, UISearchResultsUpdating{
+class HistoryTableViewController: UITableViewController{
     var weatherSearchs:[SearchWeatherRealm] = []
     var filteredWeatherSearchs:[SearchWeatherRealm] = []
     var searching = false
-    var resultSearchController:UISearchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(newWeatherSearch), name: NSNotification.Name("WeatherSearchNotification"), object: nil)
-        searchBarSetup()
         
         do {
             let realm = try Realm()
@@ -61,29 +59,6 @@ class HistoryTableViewController: UITableViewController, UISearchResultsUpdating
         }
         
         return cell
-    }
-    
-    func searchBarSetup() {
-        resultSearchController = UISearchController(searchResultsController: nil)
-        resultSearchController.searchResultsUpdater = self
-        resultSearchController.hidesNavigationBarDuringPresentation = false
-        resultSearchController.dimsBackgroundDuringPresentation = false
-        resultSearchController.searchBar.searchBarStyle = UISearchBar.Style.default
-        
-        tableView.tableHeaderView = resultSearchController.searchBar
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        if searchController.searchBar.text != "" {
-            searching = true
-        } else {
-            searching = false
-        }
-        
-        filteredWeatherSearchs = weatherSearchs.filter {
-            $0.description.contains(searchController.searchBar.text!.lowercased())
-        }
-        tableView.reloadData()
     }
 
     /*
