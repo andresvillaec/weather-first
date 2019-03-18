@@ -29,7 +29,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var currentWeather:CurrentWeather?
     
     var delegate:AddCityDelegate?
-    var cities = ["Quito", "Cuenca"]
+    var cities = ["Quito", "Cuenca", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,21 +45,22 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         goButton.rx.tap.bind {
             self.currentWeatherVM.getCurrentWeatherByCity(city: self.cityTextField.text ?? "")
             
+            let searchWeatherRealm = SearchWeatherRealm(city: self.cityTextField.text ?? "", weatherDescription: "")
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(searchWeatherRealm)
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("WeatherSearchNotification"), object: nil, userInfo: ["currentWeather": searchWeatherRealm])
+                }
+            } catch {}
            
         }.disposed(by: bag)
         
         currentWeatherVM.temp.bind(to: tempLabel.rx.text).disposed(by: bag)
         currentWeatherVM.iconURL.bind(to: weatherUIImageView.kf.rx.image()).disposed(by: bag)
         
-        let searchWeatherRealm = SearchWeatherRealm(city: "Cuenca", weatherDescription: "Muy frio")
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(searchWeatherRealm)
-                
-                NotificationCenter.default.post(name: NSNotification.Name("WeatherSearchNotification"), object: nil, userInfo: ["currentWeather": searchWeatherRealm])
-            }
-        } catch {}
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
