@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import RxKingfisher
+import RealmSwift
 
 protocol AddCityDelegate {
     func addCity(city:String)
@@ -25,6 +26,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     let currentWeatherVM = CurrentWeatherViewModel()
     let bag = DisposeBag()
+    var currentWeather:CurrentWeather?
     
     var delegate:AddCityDelegate?
     var cities = ["Quito", "Cuenca"]
@@ -42,10 +44,22 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func bindViewModel() {
         goButton.rx.tap.bind {
             self.currentWeatherVM.getCurrentWeatherByCity(city: self.cityTextField.text ?? "")
-            }.disposed(by: bag)
+            
+           
+        }.disposed(by: bag)
         
         currentWeatherVM.temp.bind(to: tempLabel.rx.text).disposed(by: bag)
         currentWeatherVM.iconURL.bind(to: weatherUIImageView.kf.rx.image()).disposed(by: bag)
+        
+        let searchWeatherRealm = SearchWeatherRealm(city: "Quito", weatherDescription: "Muy frio")
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(searchWeatherRealm)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("WeatherSearchNotification"), object: nil, userInfo: ["currentWeather": searchWeatherRealm])
+            }
+        } catch {}
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

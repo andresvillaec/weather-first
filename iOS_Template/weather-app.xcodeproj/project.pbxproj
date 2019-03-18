@@ -41,8 +41,9 @@
 		27ECAEFD22026F580054DDB6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE52CF21F2731C006D904A /* Environment.swift */; };
 		725EB4DF223A9479005B44C3 /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725EB4DE223A9479005B44C3 /* ForecastWeather.swift */; };
 		72CF4B58223DF35C001A74B8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B57223DF35C001A74B8 /* SearchViewController.swift */; };
-		72CF4B5A223DF552001A74B8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B59223DF552001A74B8 /* HistoryViewController.swift */; };
 		72CF4B5C223DF597001A74B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B5B223DF597001A74B8 /* SettingsViewController.swift */; };
+		72CF4B60223F356B001A74B8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B5F223F356B001A74B8 /* HistoryTableViewController.swift */; };
+		72CF4B62223F38CA001A74B8 /* SearchWeatherRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B61223F38CA001A74B8 /* SearchWeatherRealm.swift */; };
 		72DC553422393A9E0081D1F9 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC553322393A9E0081D1F9 /* CurrentLocationViewController.swift */; };
 		72DC553622393B740081D1F9 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC553522393B740081D1F9 /* CurrentWeather.swift */; };
 		72DC553822393F8B0081D1F9 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC553722393F8B0081D1F9 /* CurrentWeatherViewModel.swift */; };
@@ -127,8 +128,9 @@
 		713D314DEA6B3E8078233353 /* Pods-iOS_Template-Tests-iOS_UITests.release (production) .xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Template-Tests-iOS_UITests.release (production) .xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Template-Tests-iOS_UITests/Pods-iOS_Template-Tests-iOS_UITests.release (production) .xcconfig"; sourceTree = "<group>"; };
 		725EB4DE223A9479005B44C3 /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 		72CF4B57223DF35C001A74B8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		72CF4B59223DF552001A74B8 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		72CF4B5B223DF597001A74B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		72CF4B5F223F356B001A74B8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		72CF4B61223F38CA001A74B8 /* SearchWeatherRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWeatherRealm.swift; sourceTree = "<group>"; };
 		72DC553322393A9E0081D1F9 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		72DC553522393B740081D1F9 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		72DC553722393F8B0081D1F9 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
@@ -358,8 +360,8 @@
 				D89520B44D7ED2F3C4B9709C /* Models */,
 				72DC553322393A9E0081D1F9 /* CurrentLocationViewController.swift */,
 				72CF4B57223DF35C001A74B8 /* SearchViewController.swift */,
-				72CF4B59223DF552001A74B8 /* HistoryViewController.swift */,
 				72CF4B5B223DF597001A74B8 /* SettingsViewController.swift */,
+				72CF4B5F223F356B001A74B8 /* HistoryTableViewController.swift */,
 			);
 			path = iOS_Template;
 			sourceTree = "<group>";
@@ -404,6 +406,7 @@
 				27487A0221F6560F00C0FEAB /* Question.swift */,
 				72DC553522393B740081D1F9 /* CurrentWeather.swift */,
 				725EB4DE223A9479005B44C3 /* ForecastWeather.swift */,
+				72CF4B61223F38CA001A74B8 /* SearchWeatherRealm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 				72DC553622393B740081D1F9 /* CurrentWeather.swift in Sources */,
 				72F73FAF223BE9C00083EC17 /* ForecastViewModel.swift in Sources */,
 				27487A1D21F7964400C0FEAB /* RealmDataManager.swift in Sources */,
+				72CF4B62223F38CA001A74B8 /* SearchWeatherRealm.swift in Sources */,
 				27487A2121F79F2A00C0FEAB /* QuestionDataManager.swift in Sources */,
 				27ECAEFD22026F580054DDB6 /* Environment.swift in Sources */,
 				72DC553A223940060081D1F9 /* CurrentWeatherService.swift in Sources */,
@@ -868,11 +872,11 @@
 				72F73FB1223BE9FE0083EC17 /* ForecastService.swift in Sources */,
 				27487A2321F7C7C600C0FEAB /* ChoiceEntity.swift in Sources */,
 				27487A1F21F7965D00C0FEAB /* DataManagerProtocol.swift in Sources */,
+				72CF4B60223F356B001A74B8 /* HistoryTableViewController.swift in Sources */,
 				2757C47B21FA25EC0043621D /* NetworkManagerProvider.swift in Sources */,
 				72DC553822393F8B0081D1F9 /* CurrentWeatherViewModel.swift in Sources */,
 				72CF4B58223DF35C001A74B8 /* SearchViewController.swift in Sources */,
 				72DC553C2239426E0081D1F9 /* WeatherNetworkingManagerProvider.swift in Sources */,
-				72CF4B5A223DF552001A74B8 /* HistoryViewController.swift in Sources */,
 				27AE527E21F26659006D904A /* ViewController.swift in Sources */,
 				27487A0321F6560F00C0FEAB /* Question.swift in Sources */,
 				27AE527C21F26659006D904A /* AppDelegate.swift in Sources */,
