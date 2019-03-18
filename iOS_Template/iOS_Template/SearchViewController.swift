@@ -16,6 +16,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
     @IBOutlet weak var cityPickerView: UIPickerView!
     @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var goButton: UIButton!
     
     var delegate:AddCityDelegate?
     var cities = ["Quito", "Cuenca"]
@@ -28,8 +29,18 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         cityTextField.delegate = self
     }
     
-    @IBAction func goButtonPressed(_ sender: Any) {
+    func bindViewModel() {
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        cityPickerView.isHidden = true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        cityPickerView.isHidden = false
+        cityTextField.text = cities[cityPickerView.selectedRow(inComponent: 0)]
+        return false
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

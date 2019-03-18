@@ -33,4 +33,20 @@ class CurrentWeatherViewModel {
             }
         }.disposed(by: bag)
     }
+    
+    func getCurrentWeatherByCity(city:String) {
+        service.getCurrentWeatherByCity(city: String(city)).subscribe { (event) in
+            switch event {
+            case .success(let weather):
+                self.cityName.onNext(weather?.name ?? "")
+                self.temp.onNext(weather?.getTemperature() ?? "")
+                self.image.onNext(weather?.image ?? UIImage())
+                self.iconURL.onNext((weather?.getIconURL())!)
+                break
+            case .error(let error):
+                print(error)
+                break
+            }
+            }.disposed(by: bag)
+    }
 }

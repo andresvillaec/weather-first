@@ -160,9 +160,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="M8N-5h-iH1" kind="relationship" relationship="viewControllers" id="LOC-GR-0NU"/>
                         <segue destination="tPy-gx-rxg" kind="relationship" relationship="viewControllers" id="2Cc-hX-c2d"/>
                         <segue destination="0lt-j1-w9M" kind="relationship" relationship="viewControllers" id="hh4-jx-8nh"/>
-                        <segue destination="M8N-5h-iH1" kind="relationship" relationship="viewControllers" id="LOC-GR-0NU"/>
                         <segue destination="STA-Pk-fdf" kind="relationship" relationship="viewControllers" id="Y7Y-bY-0kr"/>
                     </connections>
                 </tabBarController>
@@ -200,9 +200,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-cu-Kpq">
                                 <rect key="frame" x="173" y="119" width="29" height="30"/>
                                 <state key="normal" title="Go"/>
-                                <connections>
-                                    <action selector="goButtonPressed:" destination="M8N-5h-iH1" eventType="touchUpInside" id="baf-jv-JPA"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -225,6 +222,7 @@
                     <connections>
                         <outlet property="cityPickerView" destination="tCQ-hh-9vi" id="cTd-nY-cUb"/>
                         <outlet property="cityTextField" destination="aWQ-xd-sDw" id="RXR-z4-NuQ"/>
+                        <outlet property="goButton" destination="oiq-cu-Kpq" id="fca-ms-V64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7J-SH-cdw" userLabel="First Responder" sceneMemberID="firstResponder"/>

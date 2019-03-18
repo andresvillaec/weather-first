@@ -11,6 +11,7 @@ import Moya
 
 enum WeatherNetworkManagerProvider {
     case getCurrentWeather(lat:Double, lon:Double)
+    case getCurrentWeatherByCity(city:String)
     case getForecastWeather(lat:Double, lon:Double)
 }
 
@@ -23,6 +24,8 @@ extension WeatherNetworkManagerProvider: TargetType {
         switch self {
         case .getCurrentWeather(_):
             return "/weather"
+        case .getCurrentWeatherByCity(_):
+            return "/weather"
         case .getForecastWeather(_):
             return "/forecast"
         }
@@ -31,6 +34,8 @@ extension WeatherNetworkManagerProvider: TargetType {
     var method: Moya.Method {
         switch self {
         case .getCurrentWeather(_):
+            return .get
+        case .getCurrentWeatherByCity(_):
             return .get
         case .getForecastWeather(_):
             return .get
@@ -45,6 +50,8 @@ extension WeatherNetworkManagerProvider: TargetType {
         switch self {
         case .getCurrentWeather(let lat, let lon):
             return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "units": "metric", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
+        case .getCurrentWeatherByCity(let city):
+            return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "units": "metric", "q": city], encoding: URLEncoding.queryString)
         case .getForecastWeather(let lat, let lon):
             return .requestParameters(parameters: ["APPID": "59f21163b28c9d8c47ec2e0f19ba2078", "units": "metric", "lon": lon, "lat": lat], encoding: URLEncoding.queryString)
         }

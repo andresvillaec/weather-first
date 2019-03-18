@@ -22,4 +22,11 @@ class CurrentWeatherService {
             .mapJSON()
             .map { Mapper<CurrentWeather>().map(JSONObject: $0) }
     }
+    
+    func getCurrentWeatherByCity (city:String) -> CurrentWeatherSequence {
+        return provider.rx.request(.getCurrentWeatherByCity(city:city))
+            .filterSuccessfulStatusCodes()
+            .mapJSON()
+            .map { Mapper<CurrentWeather>().map(JSONObject: $0) }
+    }
 }
