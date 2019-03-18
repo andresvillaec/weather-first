@@ -16,7 +16,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
-    @IBOutlet weak var searchWeatherButton: UIButton!
     @IBOutlet weak var forecastTableView: UITableView!
     
     let currentWeatherVM = CurrentWeatherViewModel()

@@ -113,10 +113,6 @@
                                     <constraint firstAttribute="height" constant="200" id="uJ4-N5-8jI"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ7-9F-2aY">
-                                <rect key="frame" x="154" y="558" width="67" height="30"/>
-                                <state key="normal" title="Consultar"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WKy-q5-NfS">
                                 <rect key="frame" x="16" y="312" width="345" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,10 +124,8 @@
                             <constraint firstItem="MUU-5h-yna" firstAttribute="top" secondItem="nVY-Nn-CMd" secondAttribute="top" constant="30" id="QW5-au-GKq"/>
                             <constraint firstItem="MUU-5h-yna" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="Vuc-RV-JQi"/>
                             <constraint firstItem="Qix-UV-aCw" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="WbD-Ue-S30"/>
-                            <constraint firstItem="nVY-Nn-CMd" firstAttribute="bottom" secondItem="mQ7-9F-2aY" secondAttribute="bottom" constant="30" id="d8v-nE-S4M"/>
                             <constraint firstItem="Qix-UV-aCw" firstAttribute="top" secondItem="MUU-5h-yna" secondAttribute="bottom" constant="30" id="dRv-gT-iYO"/>
                             <constraint firstItem="Qix-UV-aCw" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="uEP-K9-smR"/>
-                            <constraint firstItem="mQ7-9F-2aY" firstAttribute="centerX" secondItem="QfV-97-Lgd" secondAttribute="centerX" id="uHG-Bf-UDn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nVY-Nn-CMd"/>
                     </view>
@@ -140,7 +134,6 @@
                     <connections>
                         <outlet property="cityLabel" destination="MUU-5h-yna" id="ht5-cG-KvB"/>
                         <outlet property="forecastTableView" destination="WKy-q5-NfS" id="uLr-zP-Uzk"/>
-                        <outlet property="searchWeatherButton" destination="mQ7-9F-2aY" id="B8q-K0-SDJ"/>
                         <outlet property="temperatureLabel" destination="tRM-zv-sd4" id="07j-WC-0Oy"/>
                         <outlet property="weatherImageView" destination="9pf-CJ-Rj8" id="Pkz-YV-eyY"/>
                     </connections>
@@ -160,9 +153,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="tPy-gx-rxg" kind="relationship" relationship="viewControllers" id="2Cc-hX-c2d"/>
                         <segue destination="M8N-5h-iH1" kind="relationship" relationship="viewControllers" id="LOC-GR-0NU"/>
                         <segue destination="STA-Pk-fdf" kind="relationship" relationship="viewControllers" id="Y7Y-bY-0kr"/>
-                        <segue destination="tPy-gx-rxg" kind="relationship" relationship="viewControllers" id="2Cc-hX-c2d"/>
                         <segue destination="0lt-j1-w9M" kind="relationship" relationship="viewControllers" id="hh4-jx-8nh"/>
                     </connections>
                 </tabBarController>

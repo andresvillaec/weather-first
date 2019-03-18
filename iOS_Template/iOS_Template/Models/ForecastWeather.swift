@@ -31,7 +31,7 @@ class ForecastDay: Mappable {
     var temp:Double?
     var description:String?
     var icon:String?
-    var date:Date?
+    var date:String?
     
     required init?(map: Map) {
         
