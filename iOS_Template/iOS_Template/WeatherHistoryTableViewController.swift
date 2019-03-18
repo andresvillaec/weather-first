@@ -2,7 +2,7 @@
 //  WeatherHistoryTableViewController.swift
 //  iOS_Template
 //
-//  Created by Andres Villavicencio on 3/17/19.
+//  Created by Andres Villavicencio on 3/18/19.
 //  Copyright © 2019 DEVSU. All rights reserved.
 //
 
@@ -10,17 +10,12 @@ import UIKit
 import RealmSwift
 
 class WeatherHistoryTableViewController: UITableViewController {
-
     var weatherSearchs:[SearchWeatherRealm] = []
-    var filteredWeatherSearchs:[SearchWeatherRealm] = []
-    var searching = false
-    var resultSearchController:UISearchController = UISearchController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(newWeatherSearch), name: NSNotification.Name("WeatherSearchNotification"), object: nil)
-        searchBarSetup()
         
         do {
             let realm = try Realm()
@@ -36,65 +31,30 @@ class WeatherHistoryTableViewController: UITableViewController {
         weatherSearchs += [newSearchWeatherRealm]
         tableView.insertRows(at: [IndexPath(row: weatherSearchs.count - 1, section: 0)], with: .automatic)
     }
-    
+
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if searching {
-            return filteredWeatherSearchs.count
-        }
+//        return cities.count
         return weatherSearchs.count
     }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherHistoryCell", for: indexPath)
-        
-        if searching {
-            cell.textLabel?.text = filteredWeatherSearchs[indexPath.row].description
-        } else {
-            cell.textLabel?.text = weatherSearchs[indexPath.row].description
-        }
-        
-        return cell
-    }
-    
-    func searchBarSetup() {
-        resultSearchController = UISearchController(searchResultsController: nil)
-        resultSearchController.searchResultsUpdater = self as! UISearchResultsUpdating
-        resultSearchController.hidesNavigationBarDuringPresentation = false
-        resultSearchController.dimsBackgroundDuringPresentation = false
-        resultSearchController.searchBar.searchBarStyle = UISearchBar.Style.default
-        
-        tableView.tableHeaderView = resultSearchController.searchBar
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        if searchController.searchBar.text != "" {
-            searching = true
-        } else {
-            searching = false
-        }
-        
-        filteredWeatherSearchs = weatherSearchs.filter {
-            $0.description.contains(searchController.searchBar.text!.lowercased())
-        }
-        tableView.reloadData()
-    }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+//        cell.textLabel?.text = cities[indexPath.row]
+        cell.textLabel?.text = weatherSearchs[indexPath.row].city
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

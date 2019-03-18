@@ -44,6 +44,7 @@
 		72CF4B5C223DF597001A74B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B5B223DF597001A74B8 /* SettingsViewController.swift */; };
 		72CF4B60223F356B001A74B8 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B5F223F356B001A74B8 /* HistoryTableViewController.swift */; };
 		72CF4B62223F38CA001A74B8 /* SearchWeatherRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B61223F38CA001A74B8 /* SearchWeatherRealm.swift */; };
+		72CF4B68223F614C001A74B8 /* WeatherHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CF4B67223F614C001A74B8 /* WeatherHistoryTableViewController.swift */; };
 		72DC553422393A9E0081D1F9 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC553322393A9E0081D1F9 /* CurrentLocationViewController.swift */; };
 		72DC553622393B740081D1F9 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC553522393B740081D1F9 /* CurrentWeather.swift */; };
 		72DC553822393F8B0081D1F9 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC553722393F8B0081D1F9 /* CurrentWeatherViewModel.swift */; };
@@ -131,6 +132,7 @@
 		72CF4B5B223DF597001A74B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		72CF4B5F223F356B001A74B8 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		72CF4B61223F38CA001A74B8 /* SearchWeatherRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWeatherRealm.swift; sourceTree = "<group>"; };
+		72CF4B67223F614C001A74B8 /* WeatherHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryTableViewController.swift; sourceTree = "<group>"; };
 		72DC553322393A9E0081D1F9 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		72DC553522393B740081D1F9 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		72DC553722393F8B0081D1F9 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				72CF4B57223DF35C001A74B8 /* SearchViewController.swift */,
 				72CF4B5B223DF597001A74B8 /* SettingsViewController.swift */,
 				72CF4B5F223F356B001A74B8 /* HistoryTableViewController.swift */,
+				72CF4B67223F614C001A74B8 /* WeatherHistoryTableViewController.swift */,
 			);
 			path = iOS_Template;
 			sourceTree = "<group>";
@@ -870,6 +873,7 @@
 				72DC553A223940060081D1F9 /* CurrentWeatherService.swift in Sources */,
 				72CF4B5C223DF597001A74B8 /* SettingsViewController.swift in Sources */,
 				72F73FB1223BE9FE0083EC17 /* ForecastService.swift in Sources */,
+				72CF4B68223F614C001A74B8 /* WeatherHistoryTableViewController.swift in Sources */,
 				27487A2321F7C7C600C0FEAB /* ChoiceEntity.swift in Sources */,
 				27487A1F21F7965D00C0FEAB /* DataManagerProtocol.swift in Sources */,
 				72CF4B60223F356B001A74B8 /* HistoryTableViewController.swift in Sources */,

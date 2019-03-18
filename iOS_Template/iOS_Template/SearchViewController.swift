@@ -51,7 +51,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         currentWeatherVM.temp.bind(to: tempLabel.rx.text).disposed(by: bag)
         currentWeatherVM.iconURL.bind(to: weatherUIImageView.kf.rx.image()).disposed(by: bag)
         
-        let searchWeatherRealm = SearchWeatherRealm(city: "Quito", weatherDescription: "Muy frio")
+        let searchWeatherRealm = SearchWeatherRealm(city: "Cuenca", weatherDescription: "Muy frio")
         do {
             let realm = try Realm()
             try realm.write {

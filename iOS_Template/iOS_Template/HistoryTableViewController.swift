@@ -11,8 +11,6 @@ import RealmSwift
 
 class HistoryTableViewController: UITableViewController{
     var weatherSearchs:[SearchWeatherRealm] = []
-    var filteredWeatherSearchs:[SearchWeatherRealm] = []
-    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +29,7 @@ class HistoryTableViewController: UITableViewController{
         let userInfo = notification.userInfo
         let newSearchWeatherRealm = userInfo!["currentWeather"] as! SearchWeatherRealm
         weatherSearchs += [newSearchWeatherRealm]
-        tableView.insertRows(at: [IndexPath(row: weatherSearchs.count - 1, section: 0)], with: .automatic)
+        tableView.insertRows(at: [IndexPath(row: weatherSearchs.count - 1, section: 1)], with: .automatic)
     }
     
     // MARK: - Table view data source
