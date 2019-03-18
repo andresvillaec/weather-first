@@ -20,6 +20,6 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func addCityPressedButton(_ sender: Any) {
-        
+        UserDefaults.standard.set(numberOfDayTextField.text ?? "5", forKey: "numberOfDays")
     }
 }

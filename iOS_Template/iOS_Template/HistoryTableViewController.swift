@@ -42,21 +42,14 @@ class HistoryTableViewController: UITableViewController{
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if searching {
-            return filteredWeatherSearchs.count
-        }
+        
         return weatherSearchs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath)
 
-        if searching {
-            cell.textLabel?.text = filteredWeatherSearchs[indexPath.row].description
-        } else {
-            cell.textLabel?.text = weatherSearchs[indexPath.row].description
-        }
+        cell.textLabel?.text = weatherSearchs[indexPath.row].description
         
         return cell
     }
